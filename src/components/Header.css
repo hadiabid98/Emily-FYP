@@ -1,0 +1,16 @@
+.logo {
+    width: 218px;
+    height: 48px;
+};
+.logocont{
+    width: 218px;
+    height: 48px;
+    background: linear-gradient(#000 0%, #000 100%);
+};
+.logobar{
+    width: 3px;
+height: 48px;
+border-radius: 1.5px;
+background: #fff;
+
+}
