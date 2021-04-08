@@ -7,11 +7,11 @@ const Header =()=>{
         <div id="div_flex">
             <div>
                 <a href ='#'>
-                    <img class="logo" src  = {Logo} alt='Logo'/>
+                    <img className="logo" src  = {Logo} alt='Logo'/>
                 </a>
             </div>
             <div id = "logobar"></div>
-            <div class="logo_text">
+            <div className="logo_text">
                 <h>YOUR AI THERAPIST</h>
             </div>
         </div>
