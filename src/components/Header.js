@@ -10,15 +10,12 @@ const Header =()=>{
                     <img class="logo" src  = {Logo} alt='Logo'/>
                 </a>
             </div>
-            <div id = "logobar">
-            </div>
+            <div id = "logobar"></div>
             <div class="logo_text">
                 <h>YOUR AI THERAPIST</h>
             </div>
-
         </div>
     );
-
 }
 
 export default Header;
