@@ -1,19 +1,19 @@
 import React from 'react';
-import Logo from '../assets/logo_white.png';
-import '../../src/App.css';
+import Logo from '../assets/logo_black.png';
+import '../../src/Stylesheet.css';
 
 const Header =()=>{
     return (
-        <div class="header">
-            <div class="logocont">
+        <div id="div_flex">
+            <div>
                 <a href ='#'>
                     <img class="logo" src  = {Logo} alt='Logo'/>
                 </a>
             </div>
-            <div class = "logo bar">
+            <div id = "logobar">
             </div>
-            <div class="HeaderMenu">
-
+            <div class="logo_text">
+                <h> YOUR AI THERAPIST</h>
             </div>
 
         </div>
