@@ -15,23 +15,26 @@
 #div_flex{
         display: flex;
         flex-direction:row;
+        vertical-align: baseline;
+
 }
   #logobar{
-    height: 48px;
-    border: 5px red;
-    border-radius: 1.5px;
     margin-bottom: 10px;
     margin-top: 10px;
-    margin-right: 10px;
+    margin-right: 5px;
+    height: 48px;
+    border-left: 5px solid white;
+    border-radius: 1.5px;
   }
   .logo_text{
     font-family: "Corporate Logo Rounded";
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     color: #fff; 
-    text-align: center;   
-    margin: 10px;
-    margin-top: 10px;
+    text-align: center;
+    margin-top: auto;  
+    margin-bottom: auto; 
+    margin-left: 10px;  
   }
   
   /* --------LOGIN--------- */

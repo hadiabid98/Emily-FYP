@@ -13,7 +13,7 @@ const Header =()=>{
             <div id = "logobar">
             </div>
             <div class="logo_text">
-                <h> YOUR AI THERAPIST</h>
+                <h>YOUR AI THERAPIST</h>
             </div>
 
         </div>
