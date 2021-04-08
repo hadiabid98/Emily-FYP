@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Corporate-Logo-Rounded;
+  src: url(./assets/Corporate-Logo-Rounded.ttf);
+}  
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

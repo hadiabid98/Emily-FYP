@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Corporate Logo Rounded;
+    src: url(./assets/Corporate-Logo-Rounded.ttf);
+}  
   .div{
     justify-content: center;
     background: linear-gradient(#2d324d 0%, #464c6e 100%);
