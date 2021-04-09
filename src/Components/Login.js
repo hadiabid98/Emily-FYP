@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
+import Header from './Header';
 function Login() {
 
     const [getid, setid] = useState("");
@@ -7,10 +8,8 @@ function Login() {
 
     return (
         <div className="container" style={{background: "#2D324D " }}>
-            <div className="logo">
-                <p className="header">
-                    EMILY | Your AI Therapist
-                </p>
+            <div>
+                <Header />
             </div>
             <div className="box">
                 <p className="heading">WELCOME</p>
