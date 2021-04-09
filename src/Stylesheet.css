@@ -1,0 +1,122 @@
+@font-face {
+    font-family: Corporate Logo Rounded;
+    src: url(./assets/Corporate-Logo-Rounded.ttf);
+}  
+  .div{
+    justify-content: center;
+    background: linear-gradient(#2d324d 0%, #464c6e 100%);
+  }
+  /* -------Header------- */
+  .logo {
+    width: 218px;
+    height: 48px;
+    margin: 10px;
+  }
+#div_flex{
+        display: flex;
+        flex-direction:row;
+        vertical-align: baseline;
+
+}
+  #logobar{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+    height: 48px;
+    border-left: 5px solid white;
+    border-radius: 1.5px;
+  }
+  .logo_text{
+    font-family: "Corporate Logo Rounded";
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff; 
+    text-align: center;
+    margin-top: auto;  
+    margin-bottom: auto; 
+    margin-left: 10px;  
+  }
+  
+  /* --------LOGIN--------- */
+  
+  .dialog_box_login{
+    max-width: 522px;
+    border-radius: 50px;
+    background: linear-gradient(#454b6c 0%, #303551 100%);
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.16);
+    padding: 20px;  
+    margin: 100px auto;
+    position:relative;  
+  }
+  .welcome{
+    font-family: "Corporate Logo Rounded";
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    color: #fff;
+    border-bottom: 5px solid white;
+
+  }
+.title{
+    font-family: "Corporate Logo Rounded";
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.inp_title{
+    font-family: "Corporate Logo Rounded";
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    color: #fff;
+    justify-content: left;
+}
+.inp_box{
+    width: 442px;
+    height: 42px;
+    border-radius: 0px 21px 21px 0px;
+    background: transparent;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.16);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.small_font{
+    font-family: "Corporate Logo Rounded";
+    font-weight: bold;
+    font-size: 15px;
+    text-align: left;
+    color: #fff;
+}
+
+.button{
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 33px;
+    font-family: "Corporate Logo Rounded";
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    padding: 15px 32px;
+    text-align: center;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.txt_hyperlink{
+    font-family: "Corporate Logo Rounded";
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    color: #0AD7FF;
+}
+
+/* -------SIGNUP-------- */
+.dialog_box_signup{
+    max-width: 522px;
+    border-radius: 50px;
+    background: linear-gradient(#454b6c 0%, #303551 100%);
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.16);
+    padding: 20px;  
+    margin: 100px auto;
+    position:relative;  
+}
