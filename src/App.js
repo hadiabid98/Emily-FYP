@@ -1,6 +1,6 @@
 
 import './Stylesheet.css'
-import Login from './Components/Login'
+import Login from './components/Login'
 
 function App() {
   return (

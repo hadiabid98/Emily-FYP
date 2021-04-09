@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Login.css';
+import '../Stylesheet.css';
 import Header from './Header';
 function Login() {
 
@@ -7,27 +7,28 @@ function Login() {
     const [getPassword, setPassword] = useState("");
 
     return (
-        <div className="container" style={{background: "#2D324D " }}>
-            <div>
-                <Header />
-            </div>
-            <div className="box">
-                <p className="heading">WELCOME</p>
-                <span className="heading1">LOGIN</span>
-                <hr></hr>
-                <label>USER ID:</label>
+        <div className="div" >
+            <Header/>
+            <div className="dialog_box_login">
+                <p className="welcome">WELCOME</p>
+                <span className="title">LOGIN</span>
+                <hr id='hr'></hr>
+                <label className='label'>USER ID:</label>
                 <br></br>
-                <input type='text' value={getid} onChange={(data) => { setid(data.target.value) }} />
+                <input className='inp_box' type='text' value={getid} onChange={(data) => { setid(data.target.value) }} />
                 <br></br>
-                <label>PASSWORD:</label>
+                <label className='label'>PASSWORD:</label>
                 <br></br>
-                <input type='password' value={getPassword} onChange={(data) => { setPassword(data.target.value)}} />
-                <br></br>
-                <p>FORGET PASSWORD?</p>
-                <input type='submit' onClick={() => alert('Logged In')} />
-                <br></br>
-                <p>NEW USER? CREATE YOUR OWN ACCOUNT!</p>
+                <input className='inp_box' type='password' value={getPassword} onChange={(data) => { setPassword(data.target.value)}} />
                 
+                <p className='txt_hyperlink' style= {{margin:'-2px'}}>FORGET PASSWORD?</p>
+                
+                <input type='submit' value="LOGIN" onClick={() => alert('Logged In')} />
+                <br></br>
+                <div className='small_font' id='txt'>
+                    NEW USER? CREATE <a className='txt_hyperlink' href="#">NEW ACCOUNT NOW! <span></span></a>                 
+                </div>
+
             </div>
         </div>
     )
