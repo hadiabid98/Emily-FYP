@@ -15,14 +15,14 @@ function Login() {
                 <hr id='hr'></hr>
                 <label className='label'>USER ID:</label>
                 <br></br>
-                <input className='inp_box' type='text' value={getid} onChange={(data) => { setid(data.target.value) }} />
+                <input className='inp_box'placeholder="USER NAME"  type='text' value={getid} onChange={(data) => { setid(data.target.value) }} />
                 <br></br>
                 <label className='label'>PASSWORD:</label>
                 <br></br>
-                <input className='inp_box' type='password' value={getPassword} onChange={(data) => { setPassword(data.target.value)}} />
+                <input className='inp_box' placeholder="PASSWORD" type='password' value={getPassword} onChange={(data) => { setPassword(data.target.value)}} />
                 
-                <p className='txt_hyperlink' style= {{margin:'-2px'}}>FORGET PASSWORD?</p>
-                
+                <a className='txt_hyperlink' style= {{margin:'-2px'}} href='#'>FORGET PASSWORD?</a>
+                <br></br>
                 <input type='submit' value="LOGIN" onClick={() => alert('Logged In')} />
                 <br></br>
                 <div className='small_font' id='txt'>

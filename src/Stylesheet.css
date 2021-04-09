@@ -126,11 +126,13 @@
     font-size: 12pt;
     padding: 4px 0;
     outline: 0;
+    cursor: pointer;
   }
 
   input[type=submit]:hover{
     background-color: #575f8a;
     color: white;
+    cursor: pointer;
   }
 
 .btn{
