@@ -1,0 +1,57 @@
+@import url(./Stylesheet.css);
+
+
+.label{
+    font-family: "Corporate Logo Rounded";
+    font-weight: bold;
+    font-size: 15px;
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      color: gray;   
+}
+
+.inp_box:focus {
+    ~ .label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+      color:white;
+      font-weight:700;    
+    }
+    padding-bottom: 6px;  
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #454b6c 0%, #303551 100%);
+    border-image-slice: 1;
+  }
+
+  .inp_box{
+    &:required,&:invalid { box-shadow:none; }
+  }
+
+  .inp_box{
+    width: 100%;
+  padding: 7px 0px;
+  color: #fff;
+  font-family: "Corporate Logo Rounded";
+  font-size: 10px;
+  border: 0;
+  border-bottom: 2px solid #575f8a;
+  outline: 0;
+  transition: border-color 0.2s;
+
+    &::placeholder {
+    color: transparent;
+  }
+
+    &:placeholder-shown ~ .label {
+    font-size: 12px;
+    cursor: text;
+    top: 20px;
+  }
+
+  }
