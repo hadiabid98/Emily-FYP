@@ -1,6 +1,6 @@
 
 import './Stylesheet.css'
-import Signup from './Components/Sign-up.js'
+import Signup from './components/Sign-up'
 
 function App() {
   return (

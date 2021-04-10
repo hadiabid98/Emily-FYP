@@ -150,11 +150,11 @@
 
 /* -------SIGNUP-------- */
 .dialog_box_signup{
-    max-width: 522px;
+    max-width: 300px;
     border-radius: 50px;
     background: linear-gradient(#454b6c 0%, #303551 100%);
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.16);
-    padding: 20px;  
-    margin:  auto;
+    padding: 30px; 
+    margin: auto;
     position:relative;  
 }
