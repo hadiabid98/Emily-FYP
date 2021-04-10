@@ -7,7 +7,7 @@ function Login() {
     const [getPassword, setPassword] = useState("");
 
     return (
-        <div className="division" >
+        <div className="div" >
             <Header/>
             <div className="dialog_box_login">
                 <p className="welcome">WELCOME</p>
