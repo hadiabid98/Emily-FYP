@@ -2,7 +2,7 @@
     font-family: Corporate Logo Rounded;
     src: url(./assets/Corporate-Logo-Rounded.ttf);
 }  
-  .division{
+  .div{
     position: fixed;
     width: 100%;
     height: 100%;
@@ -155,6 +155,6 @@
     background: linear-gradient(#454b6c 0%, #303551 100%);
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.16);
     padding: 20px;  
-    margin: 100px auto;
+    margin:  auto;
     position:relative;  
 }

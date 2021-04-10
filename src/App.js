@@ -1,11 +1,11 @@
 
 import './Stylesheet.css'
-import Login from './components/Login'
+import Signup from './Components/Sign-up.js'
 
 function App() {
   return (
     <div className="div">
-      <Login/>
+      <Signup />
     </div>
   );
 }
