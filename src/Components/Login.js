@@ -7,7 +7,7 @@ function Login() {
     const [getPassword, setPassword] = useState("");
 
     return (
-        <div className="div" >
+        <div className="division" >
             <Header/>
             <div className="dialog_box_login">
                 <p className="welcome">WELCOME</p>
@@ -28,8 +28,12 @@ function Login() {
                 <div className='small_font' id='txt'>
                     NEW USER? CREATE <a className='txt_hyperlink' href="#">NEW ACCOUNT NOW! <span></span></a>                 
                 </div>
-
+                <div>
+                    <br></br>
+                    <br></br>
+                </div>
             </div>
+
         </div>
     )
 }
