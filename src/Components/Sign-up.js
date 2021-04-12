@@ -13,12 +13,13 @@ function Signup() {
     return (
         <div className="div" >
             <Header/>
+            <div><br></br><br></br></div>
             <div className="dialog_box_signup">
                 <span className="title">NEW USER</span>
                 <hr id='hr'></hr>
                 <label className='label'>USER ID:</label>
                 <br></br>
-                <input className='inp_box'placeholder="USER NAME"  type='text' value={getid} onChange={(data) => { setid(data.target.value) }} />
+                <input className='inp_box' placeholder="USER NAME"  type='text' value={getid} onChange={(data) => { setid(data.target.value) }} />
                 <br></br>
                 <label className='label'>EMAIL:</label>
                 <br></br>
