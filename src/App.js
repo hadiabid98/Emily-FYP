@@ -1,11 +1,12 @@
 
 import './Stylesheet.css'
-import Signup from './components/Sign-up'
+import Profile from './Components/UserProfile'
+
 
 function App() {
   return (
     <div className="div">
-      <Signup />
+      <Profile />
     </div>
   );
 }
