@@ -24,7 +24,7 @@ function Profile() {
                 <label >FIRST NAME:</label>
                 <label>LAST NAME:</label>
                 <br></br>
-                <input placeholder="hadiabid01" type='text' value={getid} onChange={(data) => { setid(data.target.value) }} />
+                <input placeholder="hadiabid01" type='text' disabled="disabled" value={getid} onChange={(data) => { setid(data.target.value) }} />
                 <input type='text' value={getfirstName} onChange={(data) => { setfirstName(data.target.value) }} />
                 <input type='text' value={getlastName} onChange={(data) => { setlastName(data.target.value) }} />
                 <br></br>
