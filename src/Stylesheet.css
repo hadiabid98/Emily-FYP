@@ -89,7 +89,7 @@
 
 }
 .inp_box{
-    width: 100%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -161,7 +161,7 @@
 
 /* -------USER PROFILE-------- */
 .dialog_box_profile{
-  max-width: 900px;
+  max-width: 700px;
   border-radius: 50px;
   background: linear-gradient(#454b6c 0%, #303551 100%);
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.16);
@@ -169,3 +169,9 @@
   margin: auto;
   position:relative;  
 }
+
+.inp_box:disabled{
+  background-color: rgba(255, 255, 255, 0.03);
+
+}
+
