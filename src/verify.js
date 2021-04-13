@@ -1,29 +1,45 @@
 const express=require ("express")
 const app = express()
 
-const port =3000
+const port = 5000
 const config = require("./config")
-const client = require ("twilio")(config.accountSID, config.authToken)
+const client = require ("twilio")
 
 // /login 
 //     phonenumber
 //     channel(call/sms)
 
+var sid = new client ("AC5909287c9abb7201f8512b6ab7d3a0a0", "3a9db5b183f2d38bcb0aaf022917cbb1")
+
 
 app.get('/login', (req,res)=>{
-    client
+    sid
         .verify
-        .services(config.serviceID)
+        .services("VA4fe7f5eff304278cb36d18d37ae2669a")
         .verifications
         .create({
-            to: req.query.phonenumber,
-            channel: req.query.channel
+            to: "+923115650363",
+            channel: "sms"
         })
         .then((data)=>{
             res.status(200).send(data)
         })
 })
 
-app.listen(port,()=>{
-    console.log("Server is running at"+ port )
+app.get('/verify', (req,res)=>{
+    sid
+        .verify
+        .services("VA4fe7f5eff304278cb36d18d37ae2669a")
+        .verificationChecks
+        .create({
+            to: "+923115650363",
+            code: "8370" 
+        })
+        .then((data)=>{
+            res.status(200).send(data)
+        })
+})
+
+app.listen(port, () => {
+    console.log("Server is running at ${port}" )
 })
