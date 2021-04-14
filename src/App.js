@@ -1,6 +1,6 @@
 
 import './Stylesheet.css'
-import Profile from './Components/UserProfile'
+import Profile from './verify'
 
 
 function App() {
