@@ -170,8 +170,52 @@
   position:relative;  
 }
 
+.inner_div{
+  width: "33%";
+   float: 'left';
+   padding: 15px;
+}
+
 .inp_box:disabled{
   background-color: rgba(255, 255, 255, 0.03);
 
 }
 
+.UPLabel{
+  font-family: "Corporate Logo Rounded";
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+}
+.div_row{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inpt_box{
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0px 75px 75px 0px;
+  margin-top: 10px;
+  height: 25px;
+}
+.sub_div1{
+  width: "65%";
+   float: 'left';
+   padding: 15px;
+}
+.sub_div2{
+  width: "35%";
+   float: 'left';
+   padding: 15px;
+}
+.select{
+  width: 60%;
+  padding-right: 10px;
+  
+}
+option{
+  background-color: #575f8a;
+  color: white;
+
+}
