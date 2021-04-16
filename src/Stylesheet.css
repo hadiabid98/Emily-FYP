@@ -156,7 +156,10 @@
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.16);
     padding: 30px; 
     margin: auto;
-    position:relative;  
+    position:relative; 
+    height:auto;
+  
+     
 }
 
 /* -------USER PROFILE-------- */

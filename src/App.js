@@ -1,6 +1,6 @@
 
 import './Stylesheet.css'
-import Profile from './verify'
+import Profile from './components/Sign-up'
 
 
 function App() {
