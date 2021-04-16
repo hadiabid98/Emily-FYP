@@ -19,7 +19,7 @@ function Profile() {
             <Header />
             <div className="dialog_box_profile">
                 <span className="title">USER PROFILE</span>
-                <hr></hr>
+                <hr id='hr'></hr>
                 <div className="div_row">
                     <div className="inner_div" align='left'>
                         <label className="UPLabel"  >USER ID:</label>
