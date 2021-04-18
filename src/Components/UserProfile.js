@@ -1,5 +1,6 @@
 import React, { Profiler, useState } from 'react';
 import '../Stylesheet.css';
+
 import Header from './Header';
 function Profile() {
 
@@ -24,17 +25,17 @@ function Profile() {
                     <div className="inner_div" align='left'>
                         <label className="UPLabel"  >USER ID:</label>
                         <br></br>
-                        <input className="inp_box inpt_box" placeholder="hadiabid01" type='text' value={getid} disabled onChange={(data) => { setid(data.target.value) }} />
+                        <input className="inp_box " placeholder="hadiabid01" type='text' value={getid} disabled onChange={(data) => { setid(data.target.value) }} />
                     </div>
                     <div className="inner_div" align='left'>
                         <label className="UPLabel" >FIRST NAME:</label>
                         <br></br>
-                        <input className="inp_box inpt_box" type='text' value={getfirstName} onChange={(data) => { setfirstName(data.target.value) }} />
+                        <input className="inp_box" type='text' value={getfirstName} onChange={(data) => { setfirstName(data.target.value) }} />
                     </div>
                     <div className="inner_div" align='left'>
                         <label className="UPLabel" >LAST NAME:</label>
                         <br></br>
-                        <input className="inp_box inpt_box" type='text' value={getlastName} onChange={(data) => { setlastName(data.target.value) }} />
+                        <input className="inp_box" type='text' value={getlastName} onChange={(data) => { setlastName(data.target.value) }} />
                     </div>
                 </div>
 
@@ -43,18 +44,18 @@ function Profile() {
                     <div className="inner_div" align='left'>
                         <label className="UPLabel" >EMAIL ADDRESS:</label>
                         <br></br>
-                        <input className="inp_box inpt_box" placeholder="hadi98abid@gmail.com" disabled="disabled" type='text' value={getEmail} onChange={(data) => { setEmail(data.target.value) }} />
+                        <input className="inp_box " placeholder="hadi98abid@gmail.com" disabled="disabled" type='text' value={getEmail} onChange={(data) => { setEmail(data.target.value) }} />
                     </div >
                     <div className="inner_div" align='left'>
                         <label className="UPLabel" >CONTACT NO:</label>
                         <br></br>
-                        <input className="inp_box inpt_box" placeholder="+92 314 536 8976" disabled="disabled" value={getContact} onChange={(data) => { setContact(data.target.value) }} />
+                        <input className="inp_box " placeholder="+92 314 536 8976" disabled="disabled" value={getContact} onChange={(data) => { setContact(data.target.value) }} />
                     </div>
                     <div className="inner_div" align='left'>
                         <label className="UPLabel">COUNTRY:</label>
                         <br></br>
-                        <select className="select inp_box inpt_box"  value={getCountry} onChange={(data) => { setCountry(data.target.value) }}>
-                            
+                        <select className="inp_box select_opt" id="sbar"  value={getCountry} onChange={(data) => { setCountry(data.target.value) }}>
+                             
                             <option value="AF">Afghanistan</option>
                             <option value="AX">Aland Islands</option>
                             <option value="AL">Albania</option>
@@ -312,18 +313,24 @@ function Profile() {
                 </div>
 
                 <br></br>
-                <div className="div_row">
-                    <div className="sub_div1">
-                        <label >GENDER:</label>
+                <div className="div_row two">
+                    <div className="inner_div " align='left'>
+                        <label className="radio_opt">GENDER:</label>
                         <br></br>
-                        <input type="radio" name="gender" value="MALE" onChange={(data) => { setGender(data.target.value) }} />MALE
-                        <input type="radio" name="gender" value="FEMALE" onChange={(data) => { setGender(data.target.value) }} />FEMALE
-                        <input type="radio" name="gender" value="NON BINARY" onChange={(data) => { setGender(data.target.value) }} />NON BINARY
+                          
+                                <input type="radio" className='rad_opt' name="Gender" value="MALE" onChange={(data) => { setGender(data.target.value) }}/>
+                                <label for="option-one">MALE</label>
+                                <input type="radio" className='rad_opt' value="FEMALE" onChange={(data) => { setGender(data.target.value) }} />
+                                <label for="option-two">FEMALE</label>
+                                <input type="radio" className='rad_opt' value="NON BINARY" onChange={(data) => { setGender(data.target.value) }}/>
+                                <label for="option-three">Non BINARY</label>
+                                
+                
                     </div>
-                    <div className="sub_div2">
-                        <label >OCCUPATION:</label>
+                    <div className="inner_div" align="left">
+                        <label className="UPLabel">OCCUPATION:</label>
                         <br></br>
-                        <select value={getOccupation} onChange={(data) => { setOccupation(data.target.value) }}>
+                        <select className="inp_box select_opt" id="sbar" value={getOccupation} onChange={(data) => { setOccupation(data.target.value) }}>
                             <option value="Select Options">Select option</option>
                             <option value="Student">Student</option>
                             <option value="SelfEmp">Employed Self</option>
