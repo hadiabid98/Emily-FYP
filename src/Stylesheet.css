@@ -329,3 +329,38 @@ grid-column-start: 2;
 .dash_btn{
   padding:auto;
 }
+.label_li{
+  /* display: flex;
+  flex-direction: row; */
+  font-family: "Corporate Logo Rounded";
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+}
+.width5p{
+  width: 6%;
+  text-align: left;
+}
+.width15p{
+  width: 20%;
+  text-align: left;
+}
+.width40p{
+  width: 37%;
+  text-align: left;
+}
+.row{
+  background: linear-gradient(#454b6c 0%, #303551 100%);
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.16);
+  width:100%;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  padding: 10px 0px 10px 0px;
+}
+.report_img{
+width:20px;
+height: 20px;
+margin-left: 10px;
+}
