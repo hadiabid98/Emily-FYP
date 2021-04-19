@@ -1,5 +1,4 @@
 @font-face {
-<<<<<<< HEAD
   font-family: Corporate Logo Rounded;
   src: url(./assets/Corporate-Logo-Rounded.ttf);
 }
@@ -68,7 +67,6 @@
 
 .welcome {
   text-decoration: underline 3px solid white;
-=======
     font-family: Corporate Logo Rounded;
     src: url(./assets/Corporate-Logo-Rounded.ttf);
 }  
@@ -161,7 +159,7 @@
   color:#fff;
   background-color: #fff;
   margin-top: -15px;
->>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
+
 }
 
 .title, .welcome {
@@ -276,36 +274,22 @@ input[type=submit]:hover {
   position: relative;
 }
 
-<<<<<<< HEAD
-.inner_div {
-  width: "33%";
-  float: 'left';
-  padding: 15px;
-=======
 .inner_div{
   width: 33%;
    padding: 15px;
->>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
 }
 
 .inp_box:disabled {
   background-color: rgba(255, 255, 255, 0.03);
 }
 
-<<<<<<< HEAD
-.UPLabel {
-=======
 .UPLabel,.radio_opt{
->>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
   font-family: "Corporate Logo Rounded";
   font-weight: bold;
   font-size: 15px;
   color: #fff;
 }
 
-<<<<<<< HEAD
-.div_row {
-=======
 .radio_opt{
   padding-bottom: 10px;
 }
@@ -315,7 +299,6 @@ input[type=submit]:hover {
 
 }
 .div_row{
->>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
   width: 100%;
   display: flex;
   align-items: center;
@@ -341,15 +324,11 @@ input[type=submit]:hover {
   float: 'left';
   padding: 15px;
 }
-<<<<<<< HEAD
 
 .select {
   width: 60%;
   padding-right: 10px;
 }
-
-option {
-=======
 .select_opt{
   height: auto;
   background: transparent;
@@ -358,7 +337,6 @@ option {
 }
 
 option{
->>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
   background-color: #575f8a;
   color: white;
 }
@@ -396,9 +374,6 @@ option{
 /* use .small_font for timer line
 use .txt_hyperlink for resend button */
 
-<<<<<<< HEAD
-.label_li {
-=======
 .dash{
   max-width: 700px;
   padding: 30px; 
@@ -451,7 +426,6 @@ grid-column-start: 2;
   padding:auto;
 }
 .label_li{
->>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
   /* display: flex;
   flex-direction: row; */
   font-family: "Corporate Logo Rounded";
@@ -459,13 +433,9 @@ grid-column-start: 2;
   font-size: 15px;
   color: #fff;
 }
-<<<<<<< HEAD
 
-.width5p {
-=======
 .width5p{
   margin-left:20px;
->>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
   width: 6%;
   text-align: left;
   padding-left: 5px;
@@ -491,7 +461,6 @@ grid-column-start: 2;
   height: 40px;
   padding: 10px 0px 10px 0px;
 }
-<<<<<<< HEAD
 
 .report_img {
   width: 20px;
@@ -552,7 +521,6 @@ grid-column-start: 2;
   height: 25px;
   margin: 10px 0px 0px 20px;
 }
-=======
 .report_img{
 width:20px;
 height: 20px;
@@ -565,4 +533,3 @@ margin-left: 10px;
   left: 50%;
   margin: -25px 0 0 -25px;
 }
->>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
