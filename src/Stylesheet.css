@@ -15,7 +15,9 @@
   }
   #txt{
  padding-top: inherit;
-
+  }
+  #div_white{
+    background: white !important;
 
   }
   /* -------Header------- */
@@ -338,6 +340,7 @@ grid-column-start: 2;
   color: #fff;
 }
 .width5p{
+  margin-left:20px;
   width: 6%;
   text-align: left;
 }
@@ -363,4 +366,11 @@ grid-column-start: 2;
 width:20px;
 height: 20px;
 margin-left: 10px;
+}
+
+.section{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
 }

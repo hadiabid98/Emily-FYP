@@ -4,12 +4,12 @@ import './Stylesheet.css'
 // import Profile from "./components/UserProfile"
 // import Signup from "./Components/Sign-up"
 // import Verify from "./Components/Verification"
-import Dashboard from "./components/Dashboard"
-
+// import Dashboard from "./components/Dashboard"
+import REPORTS from './components/Reports'
 function App() {
   return (
     <div className="div">
-      <Dashboard/>
+      <REPORTS/>
     </div>
   );
 }
