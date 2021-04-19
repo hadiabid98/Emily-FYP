@@ -1,17 +1,18 @@
 
 import './Stylesheet.css'
-//  import Profile from './verify'
-// import Profile from "./Components/UserProfile"
+//  import Verification from './verify'
+// import Profile from "./components/UserProfile"
 // import Signup from "./Components/Sign-up"
 // import Verify from "./Components/Verification"
-import Report from "./Components/Reports"
-
+// import Dashboard from "./components/Dashboard"
+import REPORTS from './components/Reports'
 function App() {
   return (
     <div className="div">
-      <Report />
+      <REPORTS/>
     </div>
   );
 }
+
 
 export default App;

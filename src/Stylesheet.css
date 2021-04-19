@@ -15,7 +15,9 @@
   }
   #txt{
  padding-top: inherit;
-
+  }
+  #div_white{
+    background: white !important;
 
   }
   /* -------Header------- */
@@ -65,19 +67,30 @@
     
 
   }
-.title,.welcome{
+.title,.welcome,.welcome_user{
     font-family: "Corporate Logo Rounded";
     font-weight: bold;
     font-size: 15px;
     text-align: center;
     color:  #fff;
+    
+}
+#dash_title{
+  font-size: 20px !important;
 }
 #hr{
   height: 3px;
   border-width:0;
   color:#fff;
   background-color: #fff;
+}
 
+.hr{
+  height: 3px;
+  border-width:0;
+  color:#fff;
+  background-color: #fff;
+  margin-top: -15px;
 }
 
 .label{
@@ -147,6 +160,9 @@
     color: #0AD7FF;
     text-decoration: underline #0AD7FF;
 }
+.welcome_user{
+  color: #0AD7FF;
+}
 
 /* -------SIGNUP-------- */
 .dialog_box_signup{
@@ -172,8 +188,7 @@
 }
 
 .inner_div{
-  width: "33%";
-   float: 'left';
+  width: 33%;
    padding: 15px;
 }
 
@@ -182,17 +197,27 @@
 
 }
 
-.UPLabel{
+.UPLabel,.radio_opt{
   font-family: "Corporate Logo Rounded";
   font-weight: bold;
   font-size: 15px;
   color: #fff;
+}
+
+.radio_opt{
+  padding-bottom: 10px;
+}
+
+.rad_opt{
+   padding-right: 10px;
+
 }
 .div_row{
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
 }
 .inpt_box{
   background-color: rgba(255, 255, 255, 0.1);
@@ -210,15 +235,43 @@
    float: 'left';
    padding: 15px;
 }
-.select{
-  width: 60%;
-  padding-right: 10px;
+.select_opt{
+  height: auto;
+  background: transparent;
+  line-height:30px;
   
 }
+
 option{
   background-color: #575f8a;
   color: white;
 }
+
+#sbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#sbar::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#sbar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #2d324d;
+  height: 20px;
+}
+
+.two{
+  grid-row: 1 / 5;
+}
+
 
 /* ----------Verification----------- */
 
@@ -227,6 +280,57 @@ option{
 /* use .small_font for timer line
 use .txt_hyperlink for resend button */
 
+.dash{
+  max-width: 700px;
+  padding: 30px; 
+  margin: auto;
+  position:relative;  
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 700px;
+  padding: 30px;
+  margin: auto;
+  row-gap: 25px;
+  column-gap: 0;
+  align-items: center;
+  justify-items: center;
+ 
+}
+#Lst_row{
+grid-column-start: 2;
+}
+.db_btn{
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background: linear-gradient(#454b6c 0%, #303551 100%);
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.16);
+  justify-content: center;
+  outline: none;
+  border: none;
+  opacity: 1;
+  transition: 0.3s;
+ 
+}
+.btn_logo{
+  
+  width: 80px;
+  height: 80px;
+  padding-top: 20px;
+}
+
+.db_btn:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+
+.dash_btn{
+  padding:auto;
+}
 .label_li{
   /* display: flex;
   flex-direction: row; */
@@ -236,6 +340,7 @@ use .txt_hyperlink for resend button */
   color: #fff;
 }
 .width5p{
+  margin-left:20px;
   width: 6%;
   text-align: left;
 }
@@ -261,4 +366,11 @@ use .txt_hyperlink for resend button */
 width:20px;
 height: 20px;
 margin-left: 10px;
+}
+
+.section{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
 }
