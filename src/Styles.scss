@@ -1,57 +1,40 @@
 @import url(./Stylesheet.css);
 
+$bg: white;
+$fg: lighten($bg,20%);
+$borderWidth: 3px;
 
-.label{
-    font-family: "Corporate Logo Rounded";
-    font-weight: bold;
-    font-size: 15px;
-      position: absolute;
-      top: 0;
-      display: block;
-      transition: 0.2s;
-      color: gray;   
+body {
+  background: $bg;
+  font-family: "Corporate Logo Rounded";
 }
 
-.inp_box:focus {
-    ~ .label {
-      position: absolute;
-      top: 0;
-      display: block;
-      transition: 0.2s;
-      font-size: 1rem;
-      color:white;
-      font-weight:700;    
-    }
-    padding-bottom: 6px;  
-    font-weight: 700;
-    border-width: 3px;
-    border-image: linear-gradient(to right, #454b6c 0%, #303551 100%);
-    border-image-slice: 1;
-  }
+input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
 
-  .inp_box{
-    &:required,&:invalid { box-shadow:none; }
-  }
+label {
+  color: lighten($bg,40%);
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 20px;
+}
 
-  .inp_box{
-    width: 100%;
-  padding: 7px 0px;
-  color: #fff;
-  font-family: "Corporate Logo Rounded";
-  font-size: 10px;
-  border: 0;
-  border-bottom: 2px solid #575f8a;
-  outline: 0;
-  transition: border-color 0.2s;
+input[type=radio]:checked + label{
+  color: lighten($bg,60%);
+  background: $fg;
+}
 
-    &::placeholder {
-    color: transparent;
-  }
-
-    &:placeholder-shown ~ .label {
-    font-size: 12px;
-    cursor: text;
-    top: 20px;
-  }
-
-  }
+label + input[type=radio] + label {
+  border-left: solid $borderWidth $fg;
+}
+.radio-group {
+  border: solid $borderWidth $fg;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}

@@ -1,4 +1,5 @@
 @font-face {
+<<<<<<< HEAD
   font-family: Corporate Logo Rounded;
   src: url(./assets/Corporate-Logo-Rounded.ttf);
 }
@@ -67,6 +68,100 @@
 
 .welcome {
   text-decoration: underline 3px solid white;
+=======
+    font-family: Corporate Logo Rounded;
+    src: url(./assets/Corporate-Logo-Rounded.ttf);
+}  
+  .div{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    text-align: center;
+    transition: all 1500ms ease;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#2d324d 0%, #464c6e 100%);
+  }
+  #txt{
+ padding-top: inherit;
+  }
+  #div_white{
+    background: white !important;
+
+  }
+  /* -------Header------- */
+  .logo {
+    width: 200px;
+    height: 40px;
+    margin: 15px;
+  }
+#div_flex{
+        display: flex;
+        flex-direction:row;
+        vertical-align: baseline;
+
+}
+  #logobar{
+    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-right: 5px;
+    height: 40px;
+    border-left: 5px solid white;
+    border-radius: 1.5px;
+  }
+  .logo_text{
+    font-family: "Corporate Logo Rounded";
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff; 
+    text-align: center;
+    margin-top: auto;  
+    margin-bottom: auto; 
+    margin-left: 10px;  
+  }
+  
+  /* --------LOGIN--------- */
+  
+  .dialog_box_login{
+    max-width: 300px;
+    border-radius: 50px;
+    background: linear-gradient(#454b6c 0%, #303551 100%);
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.16);
+    padding: 20px;  
+    margin: 100px auto;
+    position:relative;  
+  }
+  .welcome{
+    text-decoration: underline 3px solid white;
+    
+
+  }
+.title,.welcome,.welcome_user{
+    font-family: "Corporate Logo Rounded";
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    color:  #fff;
+    
+}
+#dash_title{
+  font-size: 20px !important;
+}
+#hr{
+  height: 3px;
+  border-width:0;
+  color:#fff;
+  background-color: #fff;
+}
+
+.hr{
+  height: 3px;
+  border-width:0;
+  color:#fff;
+  background-color: #fff;
+  margin-top: -15px;
+>>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
 }
 
 .title, .welcome {
@@ -152,6 +247,9 @@ input[type=submit]:hover {
   color: #0AD7FF;
   text-decoration: underline #0AD7FF;
 }
+.welcome_user{
+  color: #0AD7FF;
+}
 
 /* -------SIGNUP-------- */
 
@@ -178,28 +276,51 @@ input[type=submit]:hover {
   position: relative;
 }
 
+<<<<<<< HEAD
 .inner_div {
   width: "33%";
   float: 'left';
   padding: 15px;
+=======
+.inner_div{
+  width: 33%;
+   padding: 15px;
+>>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
 }
 
 .inp_box:disabled {
   background-color: rgba(255, 255, 255, 0.03);
 }
 
+<<<<<<< HEAD
 .UPLabel {
+=======
+.UPLabel,.radio_opt{
+>>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
   font-family: "Corporate Logo Rounded";
   font-weight: bold;
   font-size: 15px;
   color: #fff;
 }
 
+<<<<<<< HEAD
 .div_row {
+=======
+.radio_opt{
+  padding-bottom: 10px;
+}
+
+.rad_opt{
+   padding-right: 10px;
+
+}
+.div_row{
+>>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
 }
 
 .inpt_box {
@@ -220,6 +341,7 @@ input[type=submit]:hover {
   float: 'left';
   padding: 15px;
 }
+<<<<<<< HEAD
 
 .select {
   width: 60%;
@@ -227,9 +349,45 @@ input[type=submit]:hover {
 }
 
 option {
+=======
+.select_opt{
+  height: auto;
+  background: transparent;
+  line-height:30px;
+  
+}
+
+option{
+>>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
   background-color: #575f8a;
   color: white;
 }
+
+#sbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#sbar::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#sbar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #2d324d;
+  height: 20px;
+}
+
+.two{
+  grid-row: 1 / 5;
+}
+
 
 /* ----------Verification----------- */
 
@@ -238,7 +396,62 @@ option {
 /* use .small_font for timer line
 use .txt_hyperlink for resend button */
 
+<<<<<<< HEAD
 .label_li {
+=======
+.dash{
+  max-width: 700px;
+  padding: 30px; 
+  margin: auto;
+  position:relative;  
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 700px;
+  padding: 30px;
+  margin: auto;
+  row-gap: 25px;
+  column-gap: 0;
+  align-items: center;
+  justify-items: center;
+ 
+}
+#Lst_row{
+grid-column-start: 2;
+}
+.db_btn{
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background: linear-gradient(#454b6c 0%, #303551 100%);
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.16);
+  justify-content: center;
+  outline: none;
+  border: none;
+  opacity: 1;
+  transition: 0.3s;
+ 
+}
+.btn_logo{
+  
+  width: 80px;
+  height: 80px;
+  padding-top: 20px;
+}
+
+.db_btn:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+
+.dash_btn{
+  padding:auto;
+}
+.label_li{
+>>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
   /* display: flex;
   flex-direction: row; */
   font-family: "Corporate Logo Rounded";
@@ -246,8 +459,13 @@ use .txt_hyperlink for resend button */
   font-size: 15px;
   color: #fff;
 }
+<<<<<<< HEAD
 
 .width5p {
+=======
+.width5p{
+  margin-left:20px;
+>>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51
   width: 6%;
   text-align: left;
   padding-left: 5px;
@@ -273,6 +491,7 @@ use .txt_hyperlink for resend button */
   height: 40px;
   padding: 10px 0px 10px 0px;
 }
+<<<<<<< HEAD
 
 .report_img {
   width: 20px;
@@ -333,3 +552,17 @@ use .txt_hyperlink for resend button */
   height: 25px;
   margin: 10px 0px 0px 20px;
 }
+=======
+.report_img{
+width:20px;
+height: 20px;
+margin-left: 10px;
+}
+
+.section{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+}
+>>>>>>> 0f7f6b62789046a2d6d13a556bc33ea68a566f51

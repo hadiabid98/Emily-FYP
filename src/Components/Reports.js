@@ -11,16 +11,21 @@ function Report() {
     const [getConVerify, setConVerify] = useState("");
 
     return (
-        <div className="div" >
-            <Header />
-            <div className="dialog_box_profile">
-                <span className="title">REPORTS</span>
+        
+        <div className="div" id="div_white">
+                <Header style={{background:' linear-gradient(#2d324d 0%, #464c6e 100%)'}} />
+
+            <div style={{height:'10%'}}></div>
+            <div className="dialog_box_profile" style={{maxWidth:'65%'}} >
+                <span className="title" style={{fontSize:'30px'}}>REPORTS</span>
                 <hr id='hr'></hr>
                 <p className="row" >
+                   
                     <span className="label_li width5p">NO </span>
                     <span className="label_li width40p"> REPORT DATE AND TIME </span>
                     <span className="label_li width40p"> REPORT TITLE </span>
                     <span className="label_li width15p"> ACTIONS </span>
+                    
                 </p>
                 <hr id='hr'></hr>
                 <div className="row" >
@@ -54,6 +59,7 @@ function Report() {
                     </span>
                 </div>
             </div>
+          
         </div>
     )
 }
