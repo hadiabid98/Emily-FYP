@@ -68,7 +68,6 @@
 .welcome {
   text-decoration: underline 3px solid white;
     font-family: Corporate Logo Rounded;
-    src: url(./assets/Corporate-Logo-Rounded.ttf);
 }  
   .div{
     position: fixed;
@@ -146,12 +145,7 @@
 #dash_title{
   font-size: 20px !important;
 }
-#hr{
-  height: 3px;
-  border-width:0;
-  color:#fff;
-  background-color: #fff;
-}
+
 
 .hr{
   height: 3px;
@@ -162,13 +156,6 @@
 
 }
 
-.title, .welcome {
-  font-family: "Corporate Logo Rounded";
-  font-weight: bold;
-  font-size: 15px;
-  text-align: center;
-  color: #fff;
-}
 
 #hr {
   height: 3px;
@@ -199,7 +186,7 @@
   outline: 0;
 }
 
-.small_font, .txt_hyperlink, input[type=submit] {
+.small_font, .txt_hyperlink, input[type=submit],.btn {
   font-family: "Corporate Logo Rounded";
   font-weight: bold;
   font-size: 10px;
@@ -212,13 +199,15 @@ input[type=submit] {
   background: rgba(255, 255, 255, 0.15);
   border: 0;
   border-radius: 7cm;
-  margin-top: 10px;
+  margin: 10px;
   width: 120px;
-  height: 40px;
-  font-size: 12pt;
-  padding: 4px 0;
+  height: 30px;
+  font-size: 8pt;
+  color: #fff;
+  padding: 4px;
   outline: 0;
   cursor: pointer;
+ 
 }
 
 input[type=submit]:hover {
@@ -228,17 +217,24 @@ input[type=submit]:hover {
 }
 
 .btn {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  font-family: "Corporate Logo Rounded";
-  font-weight: bold;
-  font-size: 10px;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: 0;
+  border-radius: 7cm;
+  margin:10px;
+  width: 120px;
+  height: 30px;
+  font-size: 8pt;
   color: #fff;
-  padding: 15px 32px;
-  justify-content: center;
-  align-content: center;
-  margin: 4px 2px;
+  padding: 4px 0;
+  outline: 0;
+  cursor: pointer;
+  float: right;
+}
+
+.btn:hover {
+  background-color: #575f8a;
+  color: white;
+  cursor: pointer;
 }
 
 .txt_hyperlink, .resend_btn {
@@ -326,7 +322,7 @@ input[type=submit]:hover {
 }
 
 .select {
-  width: 60%;
+  width: 100%;
   padding-right: 10px;
 }
 .select_opt{
@@ -478,8 +474,8 @@ grid-column-start: 2;
 }
 
 .dialog_box_settings {
-  width: 60%;
-  border-radius: 50px;
+  width: 80%;
+  border-radius: 0;
   background: linear-gradient(#454b6c 0%, #303551 100%);
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.16);
   padding: 30px;
@@ -533,3 +529,19 @@ margin-left: 10px;
   left: 50%;
   margin: -25px 0 0 -25px;
 }
+
+.grid_settings{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  max-width: inherit;
+  padding: 30px;
+  margin: auto;
+  gap: 20px;
+}
+
+.grid_verify{
+  display: grid;
+  grid-template-columns: auto;
+  max-width: 270px;
+}
+
