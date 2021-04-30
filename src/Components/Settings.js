@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../Stylesheet.css';
 import Header from './Header';
 function Settings() {
-
     const [getid, setid] = useState("");
     const [getEmail, setEmail] = useState("");
     const [getPrePassword, setPrePassword] = useState("");
@@ -20,32 +19,43 @@ function Settings() {
     const [editContact, seteditContact] = useState(true);
     const [editPassword, seteditPassword] = useState(true);
 
-    return (
-        <div className="div" >
-            <Header />
-            <div className="dialog_box_settings">
-                <span className="title">USER PROFILE</span>
-                <hr id='hr'></hr>
-                <div className="settings_row">
+    return(
+        <div className='div' id='div_white'>
+             <Header style={{background:' linear-gradient(#2d324d 0%, #464c6e 100%)'}} />
+            <div style={{height:'5%'}}></div>
+            <div className='dialog_box_settings'>
+                <div className='grid_settings' style={{textAlign:'left'}} id='sbar'>
+                    <div>
+                        <span className="title"style={{fontSize:'35px'}}>USER PROFILE</span>
+                        <br></br><hr id='hr' ></hr>
+                    </div>
+
+                    {/* ______divs for column griding row 1___________ */}
+
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  {/* ----------------------------------------- */}
                     <div>
                         <label className="UPLabel"  >USER ID:</label>
                         <br></br>
-                        <input className="inp_box inpt_box" placeholder="hadiabid01" type='text' value={getid} disabled onChange={(data) => { setid(data.target.value) }} />
+                        <input className="inp_box " placeholder="hadiabid01" type='text' value={getid} disabled onChange={(data) => { setid(data.target.value) }} />
                     </div>
                     <div >
                         <label className="UPLabel" >FIRST NAME:</label>
                         <br></br>
-                        <input className="inp_box inpt_box" type='text' value={getfirstName} onChange={(data) => { setfirstName(data.target.value) }} />
+                        <input className="inp_box " type='text' value={getfirstName} onChange={(data) => { setfirstName(data.target.value) }} />
                     </div>
                     <div>
                         <label className="UPLabel" >LAST NAME:</label>
                         <br></br>
-                        <input className="inp_box inpt_box" type='text' value={getlastName} onChange={(data) => { setlastName(data.target.value) }} />
+                        <input className="inp_box " type='text' value={getlastName} onChange={(data) => { setlastName(data.target.value) }} />
                     </div>
-                    <div>
-                        <label className="UPLabel" >OCCUPATION:</label>
+                    <div style={{gridColumnStart:'span 2'}}>
+                        <label className="UPLabel"  >OCCUPATION:</label>
                         <br></br>
-                        <select className="select inp_box inpt_box" value={getOccupation} onChange={(data) => { setOccupation(data.target.value) }}>
+                        <select className="select inp_box " value={getOccupation} onChange={(data) => { setOccupation(data.target.value) }}>
                             <option value="Select Options" selected>Select option</option>
                             <option value="Student">Student</option>
                             <option value="SelfEmp">Employed Self</option>
@@ -53,23 +63,19 @@ function Settings() {
                             <option value="Others">Others</option>
                         </select>
                     </div>
-                </div>
-
-
-                <br></br>
-                <div className="settings_row">
-                    <div className="settings_col">
-                        <label style={{ paddingBottom: '10px' }} className="UPLabel" >GENDER:</label>
-                        <div className='settings_row'>
+                    <div>
+                        <label className="UPLabel" >GENDER:</label>
+                        <div style={{paddingTop:'20px', marginTop:'8px'}}>
                             <input className="UPLabel" type="radio" name="gender" value="MALE" onChange={(data) => { setGender(data.target.value) }} /><span className="UPLabel gender_rb">MALE</span>
                             <input type="radio" name="gender" value="FEMALE" onChange={(data) => { setGender(data.target.value) }} /><span className="UPLabel gender_rb">FEMALE</span>
                             <input type="radio" name="gender" value="NON BINARY" onChange={(data) => { setGender(data.target.value) }} /><span className="UPLabel gender_rb">NON-BINARY</span>
                         </div>
                     </div>
-                    <div >
+
+                    <div>
                         <label className="UPLabel">COUNTRY:</label>
                         <br></br>
-                        <select className="select inp_box inpt_box" value={getCountry} onChange={(data) => { setCountry(data.target.value) }}>
+                        <select className="select inp_box " value={getCountry} onChange={(data) => { setCountry(data.target.value) }}>
 
                             <option value="AF">Afghanistan</option>
                             <option value="AX">Aland Islands</option>
@@ -325,11 +331,11 @@ function Settings() {
                             <option value="ZW">Zimbabwe</option>
                         </select>
                     </div>
-                    <div>
+                        <div style={{gridColumnStart:'span 2'}}>
                         <label className="UPLabel">DATE OF BIRTH:</label>
-                        <br></br>
-                        <div className="settings_row" >
-                            <select className="select inp_box inpt_box" value={getDOB} onChange={(data) => { setDOB(data.target.value) }}>
+                        
+                        <div className="settings_row"  >
+                            <select className="select inp_box " value={getDOB} onChange={(data) => { setDOB(data.target.value) }}>
                                 <option value="Month">Month</option>
                                 <option value='01'>January</option>
                                 <option value='02'>February</option>
@@ -344,7 +350,7 @@ function Settings() {
                                 <option value='11'>November</option>
                                 <option value='12'>December</option>
                             </select>
-                            <select className="select inp_box inpt_box" value={getDOB} onChange={(data) => { setDOB(data.target.value) }}>
+                            <select className="select inp_box" value={getDOB} onChange={(data) => { setDOB(data.target.value) }}>
                                 <option value="Day">Day</option>
                                 <option value='01'>01</option>
                                 <option value='02'>02</option>
@@ -378,7 +384,7 @@ function Settings() {
                                 <option value='30'>30</option>
                                 <option value='31'>31</option>
                             </select>
-                            <select className="select inp_box inpt_box" value={getDOB} onChange={(data) => { setDOB(data.target.value) }}>
+                            <select className="select inp_box " value={getDOB} onChange={(data) => { setDOB(data.target.value) }}>
                                 <option value="Year">Year</option>
                                 <option value="1960">1960</option>
                                 <option value="1961">1961</option>
@@ -445,65 +451,66 @@ function Settings() {
                             </select>
                         </div>
                     </div>
-                </div>
-                <br></br>
+                    <div>
+                        <label className="UPLabel" >AGE:</label>
+                        <input  className="inp_box " type="text" value={getAge} onChange={(data) => { setAge(data.target.value) }} />
+                    </div>
+                   
+                    <div className='settings_change'>
+                            <label>CHANGE PASSWORD</label>
+                            <hr id='hr' />
+                    </div>
 
-                <div className="settings_col width20p">
-                    <label className="UPLabel" >AGE:</label>
-                    <input size="75px" className="inp_box inpt_box" type="text" value={getAge} onChange={(data) => { setAge(data.target.value) }} />
-                </div>
-                <br />
-                <div className='settings_row'>
-                    <div className='setting_col'>
-                        <div className='settings_change'>
+                         {/* ______divs for column griding row 5___________ */}
+
+                  <div></div>
+                  <div></div>
+                  <div className='settings_change'>
                             <label>CHANGE EMAIL</label>
                             <hr id='hr' />
-                        </div>
-                        <div>
-                            <label className="UPLabel gender_rb">EMAIL ADDRESS:</label>
-                            <br></br>
-                            <div className='settings_row'>
-                                <input className="inp_box inpt_box" placeholder="hadiabid01@gmail.com" type='text' value={getid} disabled={editEmail} onChange={(data) => { setid(data.target.value) }} />
-                                <button className="edit_btn" name='change' onClick={() => {
-                                    seteditEmail(!editEmail)
-                                }}>{editEmail ? 'EDIT' : 'SAVE'}</button>
-                            </div>
-                        </div>
                     </div>
-                    <div className='setting_col'>
-                        <div className='settings_change'>
+                 
+
+                  <div className='settings_change'>
                             <label>CHANGE CONTACT</label>
                             <hr id='hr' />
                         </div>
+
+                {/* Password Change */}
+
+                <div className='settings_row' style={{gridColumnStart:'span 3'}}>
+                        <input className="inp_box "  placeholder="previous password" type='password' value={getPrePassword} disabled={editPassword} onChange={(data) => { setPrePassword(data.target.value) }} />
+                        <input className="inp_box" style={{marginRight:'15px', marginLeft:'15px'}} placeholder="new password" type='password' value={getNewPassword} disabled={editPassword} onChange={(data) => { setNewPassword(data.target.value) }} />
+                        <input className="inp_box " placeholder="confirm password" type='password' value={getConPassword} disabled={editPassword} onChange={(data) => { setConPassword(data.target.value) }} />
+                        <button className="btn"  style={{gridRow:'2'}} name='change' onClick={() => {
+                            seteditPassword(!editPassword)}}>{editPassword ? 'SAVE' : 'SAVE'}</button>
+                    </div>
+                 <div>
+                    <label className="UPLabel gender_rb">EMAIL ADDRESS:</label>
+                    <br></br>
+                    <div className='settings_row'>
+                        <input className="inp_box " placeholder="hadiabid01@gmail.com" type='text' value={getid} disabled={editEmail} onChange={(data) => { setid(data.target.value) }} />
+                        <button className="btn"  name='change' onClick={() => { seteditEmail(!editEmail)}}>{editEmail ? 'EDIT' : 'SAVE'}</button>
+                    </div>
+                </div>
+                  {/* ----------------------------------------- */}
+
                         <div>
                             <label className="UPLabel gender_rb">CONTACT NO:</label>
                             <br></br>
                             <div className='settings_row'>
-                                <input className="inp_box inpt_box" placeholder="00 92 311 5650363" type='text' value={getid} disabled={editContact} onChange={(data) => { setid(data.target.value) }} />
-                                <button className="edit_btn" name='change' onClick={() => {
+                                <input className="inp_box " placeholder="00 92 311 5650363" type='text' value={getid} disabled={editContact} onChange={(data) => { setid(data.target.value) }} />
+                                <button className="btn" name='change' onClick={() => {
                                     seteditContact(!editContact)
                                 }}>{editContact ? 'EDIT' : 'SAVE'}</button>
                             </div>
-                        </div>
-                    </div>
+                         </div>
                 </div>
-                <br></br>
-                <div className='setting_col'>
-                    <div className='settings_change'>
-                        <label>CHANGE EMAIL</label>
-                        <hr id='hr' />
-                    </div>
-                    <div className='settings_row'>
-                        <input className="inp_box inpt_box" placeholder="previous password" type='password' value={getPrePassword} disabled={editPassword} onChange={(data) => { setPrePassword(data.target.value) }} />
-                        <input className="inp_box inpt_box" placeholder="new password" type='password' value={getNewPassword} disabled={editPassword} onChange={(data) => { setNewPassword(data.target.value) }} />
-                        <input className="inp_box inpt_box" placeholder="confirm password" type='password' value={getConPassword} disabled={editPassword} onChange={(data) => { setConPassword(data.target.value) }} />
-                        <button className="edit_btn" name='change' onClick={() => {
-                            seteditPassword(!editPassword)
-                        }}>{editPassword ? 'CHANGE' : 'SAVE'}</button>
-                    </div>
-                </div>
+
             </div>
+
         </div>
     )
+
 }
 export default Settings;
