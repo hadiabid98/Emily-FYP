@@ -6,9 +6,6 @@ import comment from '../assets/comment.png';
 import Header from './Header';
 function Report() {
 
-    const [getTimer, setTimer]=useState(30)
-    const [getEmailVerify, setEmailVerify] = useState("");
-    const [getConVerify, setConVerify] = useState("");
 
     return (
         
