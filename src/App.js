@@ -4,8 +4,9 @@ import './Stylesheet.css'
 // import Profile from "./components/UserProfile"
 // import Signup from "./Components/Sign-up"
 //  import Verify from "./components/Verification"
-// import Report from "./Components/Reports"
+// import Report from "./components/Reports"
 import Settings from "./components/Settings" 
+// import Dash from "./components/Dashboard"
 
 function App() {
   return (
