@@ -6,13 +6,16 @@ import './Stylesheet.css'
 // import Verify from "./components/Verification"
 // import Report from "./Components/Reports"
 // import Settings from "./Components/Settings"
-
-import Header from './Components/Header'
-
+// import Header from './Components/Header'
+// import Dashboard from './Components/Dashboard'
+import EOS from './Components/ReportTemplate'
 function App() {
   return (
-    <div className="div">
-      <Header />
+    <div style={{
+      width: '60%',
+      margin:'auto'
+    }}>
+      <EOS />
     </div>
   );
 }

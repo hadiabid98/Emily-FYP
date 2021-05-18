@@ -3,6 +3,7 @@ import '../Stylesheet.css';
 import Header from './Header';
 class Settings extends React.Component {
     constructor() {
+        super()
         this.state = {
             getid: '',
             getEmail: '',
