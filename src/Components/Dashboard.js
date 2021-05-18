@@ -14,7 +14,7 @@ function Dashboard() {
         <div className="div">
             <Header/>
             <div ><br></br></div>
-                <div >
+                <div>
                    <p className="welcome">
                        {pageTitle}<span className="welcome_user"> ABDUL HADI</span>
                    </p>
