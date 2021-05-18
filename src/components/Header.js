@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from '../assets/logo_black.png';
 import '../../src/Stylesheet.css';
 
-const Header =( {style} )=>{
+const Header = ({ style }) => {
     return (
         <div id="div_flex" style={style}>
             <div>
