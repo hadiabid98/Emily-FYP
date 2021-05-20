@@ -355,7 +355,7 @@ class Settings extends React.Component {
                                     <option value='11'>November</option>
                                     <option value='12'>December</option>
                                 </select>
-                                <select className="select inp_box" value={getDOB} onChange={(data) => { setDOB(data.target.value) }}>
+                                <select className="select inp_box" value={this.state.getDOB} onChange={(data) => { this.setState({ getDOB: data.target.value }) }}>
                                     <option value="Day">Day</option>
                                     <option value='01'>01</option>
                                     <option value='02'>02</option>
@@ -389,7 +389,7 @@ class Settings extends React.Component {
                                     <option value='30'>30</option>
                                     <option value='31'>31</option>
                                 </select>
-                                <select className="select inp_box " value={getDOB} onChange={(data) => { setDOB(data.target.value) }}>
+                                <select className="select inp_box " value={this.state.getDOB} onChange={(data) => { this.setState({ getDOB: data.target.value }) }}>
                                     <option value="Year">Year</option>
                                     <option value="1960">1960</option>
                                     <option value="1961">1961</option>
@@ -484,11 +484,11 @@ class Settings extends React.Component {
                         {/* Password Change */}
 
                         <div className='settings_row' style={{ gridColumnStart: 'span 3' }}>
-                            <input className="inp_box " placeholder="previous password" type='password' value={this.state.getPrePassword} disabled={editPassword} onChange={(data) => this.setState({ getPrePassword: data.target.value })} />
-                            <input className="inp_box" style={{ marginRight: '15px', marginLeft: '15px' }} placeholder="new password" type='password' value={this.state.getNewPassword} disabled={editPassword} onChange={(data) => this.setState({ getNewPassword: data.target.value })} />
-                            <input className="inp_box " placeholder="confirm password" type='password' value={this.state.getConPassword} disabled={editPassword} onChange={(data) => this.setState({ getConPassword: data.target.value })} />
+                            <input className="inp_box " placeholder="previous password" type='password' value={this.state.getPrePassword} disabled={this.state.editPassword} onChange={(data) => this.setState({ getPrePassword: data.target.value })} />
+                            <input className="inp_box" style={{ marginRight: '15px', marginLeft: '15px' }} placeholder="new password" type='password' value={this.state.getNewPassword} disabled={this.state.editPassword} onChange={(data) => this.setState({ getNewPassword: data.target.value })} />
+                            <input className="inp_box " placeholder="confirm password" type='password' value={this.state.getConPassword} disabled={this.state.editPassword} onChange={(data) => this.setState({ getConPassword: data.target.value })} />
                             <button className="btn" style={{ gridRow: '2' }} name='change' onClick={() => {
-                                seteditPassword(!this.state.editPassword)
+                                this.setState({ editPassword: !this.state.editPassword })
                             }}>{this.state.editPassword ? 'SAVE' : 'SAVE'}</button>
                         </div>
                         <div>
@@ -508,7 +508,7 @@ class Settings extends React.Component {
                                 <input className="inp_box " placeholder="00 92 311 5650363" type='text' value={this.state.getContact} disabled={this.state.editContact}
                                     onChange={(data) => this.setState({ getContact: data.target.value })} />
                                 <button className="btn" name='change' onClick={() => {
-                                    this.setState({ geteditContact: !this.state.editContact})
+                                    this.setState({ geteditContact: !this.state.editContact })
                                 }}>{this.state.editContact ? 'EDIT' : 'SAVE'}</button>
                             </div>
                         </div>
@@ -516,7 +516,7 @@ class Settings extends React.Component {
 
                 </div>
 
-            </div>
+            </div >
         )
     }
 
