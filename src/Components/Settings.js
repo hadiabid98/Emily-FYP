@@ -498,6 +498,7 @@ class Settings extends React.Component {
                                 <input className="inp_box " placeholder="hadiabid01@gmail.com" type='text' value={this.state.getEmail} disabled={this.state.editEmail} onChange={(data) => this.setState({ getEmail: data.target.value })} />
                                 <button className="btn" name='change' onClick={() => this.setState({ geteditEmail: !this.state.editEmail })}>{this.state.editEmail ? 'EDIT' : 'SAVE'}</button>
                             </div>
+
                         </div>
                         {/* ----------------------------------------- */}
 
