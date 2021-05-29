@@ -1,53 +1,75 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Stylesheet.css';
 import Header from './Header';
 import doctor from '../assets/doctor.png'
 import rep from '../assets/document.png'
 import usr from '../assets/man.png'
 import logout from '../assets/logout.png'
-import {Button, Grid, Typography,} from '@material-ui/core';
+import { useHistory, useLocation } from 'react-router';
+
 function Dashboard() {
-    // const { auth } = this.props
+    const location = useLocation()
+    const [user, setUser] = useState(null)
+    const [token, setToken] = useState(null)
+    const [name, setName] = useState('')
+    const history = useHistory()
+    useEffect(() => {
+        if (location.state) {
+            setUser(location.state.user)
+            setToken(location.state.token)
+            setName(location.state.user.fname.toUpperCase() + ' ' + location.state.user.lname.toUpperCase())
+        }
+    }, [location])
 
     var pageTitle = `WELCOME`
     return (
-        
+
         <div className="div">
-            <Header/>
+            <Header />
             <div ><br></br></div>
-                <div>
-                   <p className="welcome">
-                       {pageTitle}<span className="welcome_user"> ABDUL HADI</span>
-                   </p>
-                </div>
-                <br></br> 
+            <div>
+                <p className="welcome">
+                    {pageTitle}<span className="welcome_user"> {name}!</span>
+                </p>
+            </div>
+            <br></br>
             <div className="dash">
                 <p className="title" id="dash_title" >DASHBOARD</p>
                 <hr className="hr"></hr>
-            </div> 
-
+            </div>
             <div className="grid">
-                <button className="ripple db_btn">
-                    <span><img src={doctor}  className="btn_logo"/> </span>
+                <button className="db_btn">
+                    <span><img src={doctor} className="btn_logo" /> </span>
                     <p className="small_font">START SESSION</p>
                 </button>
-                <button className="db_btn ripple">
-                    <span><img src={rep}  className="btn_logo"/> </span>
+                <button className="db_btn">
+                    <span><img src={rep} className="btn_logo" /> </span>
                     <p className="small_font">REPORTS</p>
-                </button>              
-                <button className="db_btn ripple" >
-                    <span><img src={usr}  className="btn_logo"/> </span>
+                </button>
+                <button className="db_btn" onClick={user ?
+                    () =>
+                        history.push({
+                            pathname: '/settings',
+                            state: {
+                                user: user,
+                                token: token,
+                            }
+                        })
+                    :
+                    () => console.log('test')
+                }>
+                    <span><img src={usr} className="btn_logo" /> </span>
                     <p className="small_font">USER PROFILE</p>
-                </button>              
-                <button className="db_btn ripple " id="Lst_row">
-                    <span><img src={logout}  className="btn_logo"/> </span>
+                </button>
+                <button className="db_btn " id="Lst_row" onClick={() => history.push('/')}>
+                    <span><img src={logout} className="btn_logo" /> </span>
                     <p className="small_font">SIGN OUT</p>
-                </button>            
-            </div>  
+                </button>
+            </div>
         </div>
-            
 
 
-        )
-    }
-    export default Dashboard;
+
+    )
+}
+export default Dashboard;
