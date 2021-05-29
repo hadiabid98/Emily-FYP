@@ -26,9 +26,9 @@ router.post('/signup', (req, res) => {
           user.contact = req.body.contact
         user.save((err, user) => {
           if (err) {
-            res.statusCode = 500;
+            res.statusCode = 200;
             res.setHeader('Content-Type', 'application/json');
-            res.json({ err: err });
+            res.json({ err: err.name });
             return;
           }
           passport.authenticate('local')(req, res, () => {
@@ -42,6 +42,78 @@ router.post('/signup', (req, res) => {
         });
       }
     })
+})
+
+router.post('/verify', (req, res) => {
+  User.findById(req.body.user._id, (err, user) => {
+    if (err) {
+      res.json({
+        success: false,
+        message: err.name
+      })
+    } else if (user) {
+      user.contactIsVerified = true
+      user.emailIsVerified = true
+      user.save((err, user) => {
+        if (err) {
+          res.json({
+            success: false,
+            message: err.name
+          })
+        }
+        else {
+          res.json({
+            success: true,
+            user: user
+          })
+        }
+      })
+    } else {
+      res.json({
+        success: false,
+        message: 'User not Found'
+      })
+    }
+  })
+})
+
+router.post('/complete_profile', (req, res) => {
+  User.findById(req.body.user._id, (err, user) => {
+    if (err) {
+      res.json({
+        success: false,
+        message: err.name
+      })
+    } else if (user) {
+      user.fname = req.body.fname
+      user.lname = req.body.lname
+      user.age = req.body.age
+      user.country = req.body.country
+      user.dob = req.body.dob
+      user.occupation = req.body.occupation
+      user.save((err, user) => {
+        if (err) {
+          res.json({
+            success: false,
+            message: err.name
+          })
+        }
+        else {
+          var token = authenticate.getToken({ _id: user._id });
+          res.json({
+            success: true,
+            user: user,
+            token: token
+          })
+        }
+      })
+    } else {
+      res.json({
+        success: false,
+        message: 'User not found'
+      })
+    }
+  })
 })
 
 router.post('/login', passport.authenticate('local'), (req, res) => {
