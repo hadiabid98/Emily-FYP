@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import '../Stylesheet.css';
 import Header from './Header';
-import PropTypes from "prop-types";
-import { withRouter } from "react-router";
-import axios from 'axios';
 class Settings extends React.Component {
-    static propTypes = {
-        location: PropTypes.object.isRequired,
-        history: PropTypes.object.isRequired,
-    };
     constructor() {
         super()
         this.state = {
@@ -28,51 +21,8 @@ class Settings extends React.Component {
             editEmail: true,
             editContact: true,
             editPassword: true,
-            user: null,
-            token: null,
         }
     }
-
-    componentDidMount() {
-        const { location } = this.props;
-        if (location.state) {
-            console.log(location);
-            this.setState({
-                user: location.state.user,
-                token: location.state.token,
-                getid: location.state.user.username,
-                getEmail: location.state.user.email,
-                getAge: location.state.user.age,
-                getContact: location.state.user.contact,
-                getGender: location.state.user.gender,
-                getOccupation: location.state.user.occupation,
-                getfirstName: location.state.user.fname,
-                getlastName: location.state.user.lname,
-                getCountry: location.state.user.country,
-                getDOB: location.state.user.dob,
-            });
-        }
-    }
-
-    handleChangePassword() {
-        if (this.state.getNewPassword === this.state.getConPassword) {
-            const data = {
-                oldpassword: this.state.getPrePassword,
-                newpassword: this.state.getNewPassword
-            }
-            axios.post('http://localhost:5000/settings/change_password', data, {
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                    'Authorization': `Bearer ${this.state.token}`
-                }
-            })
-                .then(res => {
-                    console.log(res.data)
-                })
-        }
-    }
-
     render() {
         return (
             <div className='div' id='div_white'>
@@ -538,10 +488,8 @@ class Settings extends React.Component {
                             <input className="inp_box" style={{ marginRight: '15px', marginLeft: '15px' }} placeholder="new password" type='password' value={this.state.getNewPassword} disabled={this.state.editPassword} onChange={(data) => this.setState({ getNewPassword: data.target.value })} />
                             <input className="inp_box " placeholder="confirm password" type='password' value={this.state.getConPassword} disabled={this.state.editPassword} onChange={(data) => this.setState({ getConPassword: data.target.value })} />
                             <button className="btn" style={{ gridRow: '2' }} name='change' onClick={() => {
-                                this.state.editPassword ?
-                                    this.setState({ editPassword: !this.state.editPassword }) :
-                                    this.handleChangePassword()
-                            }}>{this.state.editPassword ? 'Edit' : 'SAVE'}</button>
+                                this.setState({ editPassword: !this.state.editPassword })
+                            }}>{this.state.editPassword ? 'SAVE' : 'SAVE'}</button>
                         </div>
                         <div>
                             <label className="UPLabel gender_rb">EMAIL ADDRESS:</label>
@@ -550,7 +498,6 @@ class Settings extends React.Component {
                                 <input className="inp_box " placeholder="hadiabid01@gmail.com" type='text' value={this.state.getEmail} disabled={this.state.editEmail} onChange={(data) => this.setState({ getEmail: data.target.value })} />
                                 <button className="btn" name='change' onClick={() => this.setState({ geteditEmail: !this.state.editEmail })}>{this.state.editEmail ? 'EDIT' : 'SAVE'}</button>
                             </div>
-
                         </div>
                         {/* ----------------------------------------- */}
 
@@ -574,5 +521,4 @@ class Settings extends React.Component {
     }
 
 }
-const ShowTheLocationWithRouter = withRouter(Settings);
-export default ShowTheLocationWithRouter;
+export default Settings;
