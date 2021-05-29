@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../Stylesheet.css';
 import Header from './Header';
+import {TextField, Button} from '@material-ui/core';
+
 function Login() {
 
     const [getid, setid] = useState("");
@@ -13,25 +15,19 @@ function Login() {
                 <p className="welcome">WELCOME</p>
                 <span className="title">LOGIN</span>
                 <hr id='hr'></hr>
-                <label className='label'>USER ID:</label>
+                <TextField fullWidth  size="small" id="standard-basic" label="User Name" type='text' value={getid} onChange={(data) => { setid(data.target.value) }} />
                 <br></br>
-                <input className='inp_box'placeholder="USER NAME"  type='text' value={getid} onChange={(data) => { setid(data.target.value) }} />
                 <br></br>
-                <label className='label'>PASSWORD:</label>
+                <TextField fullWidth size="small" id="standard-basic" label="Password" type='text' value={getPassword} onChange={(data) => { setPassword(data.target.value)}} />                
                 <br></br>
-                <input className='inp_box' placeholder="PASSWORD" type='password' value={getPassword} onChange={(data) => { setPassword(data.target.value)}} />
-                
-                <a className='txt_hyperlink' style= {{margin:'-2px'}} href='#'>FORGET PASSWORD?</a>
+                <a className='txt_hyperlink' href='#'>FORGET PASSWORD?</a>
                 <br></br>
-                <input type='submit' value="LOGIN" onClick={() => alert('Logged In')} />
+                <Button variant="contained" onClick={() => alert('Logged In')}>LOGIN</Button>
                 <br></br>
                 <div className='small_font' id='txt'>
                     NEW USER? CREATE <a className='txt_hyperlink' href="#">NEW ACCOUNT NOW! <span></span></a>                 
                 </div>
-                <div>
-                    <br></br>
-                    <br></br>
-                </div>
+                <br></br>
             </div>
 
         </div>

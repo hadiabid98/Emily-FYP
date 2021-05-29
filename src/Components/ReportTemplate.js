@@ -34,7 +34,11 @@ class EOS extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div id='div_white'>
+            <div style={{
+                width: '60%',
+                margin:'auto'
+            }} >
                 <div style={{
                     display: 'flex',
                     flexDirection: 'row',
@@ -172,6 +176,7 @@ class EOS extends React.Component {
                     depression as best as a machine could analyze you. Although a machine cannot analyze
                         you 100% correct if certain conditions are not metfor the machine.</p>
                 </div>
+            </div>
             </div>
         )
     }
