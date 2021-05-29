@@ -18,6 +18,9 @@ export default function Main() {
                     <Route exact path='/'>
                         <Login />
                     </Route>
+                    <Route path='/login'>
+                        <Login />
+                    </Route>
                     <Route path='/signup'>
                         <Signup />
                     </Route>
