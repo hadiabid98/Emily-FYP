@@ -41,6 +41,15 @@ emily.props = {
 
 // For changing the CSS of material UI
 emily.overrides = {
+  MuiPaper: {
+    root: {
+      backgroundColor: '#2b3038',
+      fontSize: '12px',
+    }
+  },
+
+
+
   MuiAutocomplete: {
     listbox: {
       backgroundColor: '#2b3038',

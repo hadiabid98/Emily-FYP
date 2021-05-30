@@ -4,8 +4,8 @@ import Header from './Header';
 import PropTypes from "prop-types";
 import { withRouter } from "react-router";
 import axios from 'axios';
-import { TextField, Button, Grid, Typography, } from '@material-ui/core';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import { TextField, Button, Grid, Typography, MenuItem  } from '@material-ui/core';
+
 
 class Settings extends React.Component {
     static propTypes = {
@@ -156,13 +156,51 @@ class Settings extends React.Component {
                                 <TextField fullWidth size="small" id="standard-basic" label="Last Name" type='text' value={this.state.getlastName} onChange={(data) => this.setState({ getlastName: data.target.value })} />
                             </Grid>
                             <Grid item xs={3} >
-                                <Autocomplete size="small" options={Gender} getOptionLabel={(option) => option.label} id='combo-box-demo' value={this.state.getGender} onChange={(data) => this.setState({ getGender: data.target.value })} renderInput={(params) => <TextField {...params} label="Gender" />} />
+
+                                <TextField
+                                    id="standard-select-currency"
+                                    fullWidth
+                                    size="small"
+                                    select
+                                    label="Gender"
+                                    value={this.state.getGender} onChange={(data) => this.setState({ getGender: data.target.value })}>
+                                    {Gender.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
                             </Grid>
                             <Grid size xs={3} style={{ padding: "16px" }}>
-                                <Autocomplete size="small" options={countries} getOptionLabel={(option) => option.label} id='combo-box-demo' value={this.state.getCountry} onChange={(data) => this.setState({ getCountry: data.target.value })} renderInput={(params) => <TextField {...params} label="Country" />} />
+                                <TextField
+                                    id="standard-select-currency"
+                                    fullWidth
+                                    size="small"
+                                    select
+                                    label="Country"
+                                    alue={this.state.getCountry} onChange={(data) => this.setState({ getCountry: data.target.value })} >
+                                    {countries.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
                             </Grid>
                             <Grid size xs={3} style={{ padding: "16px" }}>
-                                <Autocomplete size="small" options={Occupation} getOptionLabel={(option) => option.label} id='combo-box-demo' value={this.state.getOccupation} onChange={(data) => this.setState({ getOccupation: data.target.value })} renderInput={(params) => <TextField {...params} label="Occupation" />} />
+                                <TextField
+                                    id="standard-select-currency"
+                                    fullWidth
+                                    size="small"
+                                    select
+                                    label="Occupation"
+                                    value={this.state.getOccupation} onChange={(data) => this.setState({ getOccupation: data.target.value })} >
+                                    {Occupation.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
+
                             </Grid>
                             <Grid size xs={3} style={{ padding: "16px" }}>
                                 <TextField id="date" fullWidth label="Your Birthday" type="date" defaultValue="2017-05-24" InputLabelProps={{ shrink: true, }} value={this.state.getDOB} onChange={(data) => { this.setState({ getDOB: data.target.value }) }} />
@@ -175,14 +213,18 @@ class Settings extends React.Component {
                                     <Typography align='left' variant='h6'>CHANGE EMAIL</Typography>
                                     <hr id='hr' ></hr>
                                     <TextField fullWidth size="small" id="standard-basic" label="Email Address" type='text' value={this.state.getEmail} onChange={(data) => this.setState({ getEmail: data.target.value })} disabled={this.state.editEmail} InputProps={{ readOnly: this.state.editEmail, }} />
+
                                     <Button variant="contained" onClick={this.handleChangeEmail.bind(this)}>{this.state.editEmail ? 'Edit' : 'SAVE'}</Button>
+
                                 </Grid>
                                 <Grid item xs={4} align='left'>
                                     <Typography align='left' variant='h6'>CHANGE CONTACT</Typography>
                                     <hr id='hr' ></hr>
                                     <TextField fullWidth placeholder="923143037736" size="small" id="standard-basic" label="Contact Number" type='text' value={this.state.getContact} disabled={this.state.editContact}
                                         onChange={(data) => this.setState({ getContact: data.target.value })} InputProps={{ readOnly: this.state.editContact, }} />
+
                                     <Button variant="contained" onClick={this.handleChangeContact.bind(this)}>{this.state.editContact ? 'Edit' : 'SAVE'}</Button>
+
                                 </Grid>
                                 <Grid item xs={4} align='left'>
                                     <Typography align='left' variant='h6'>CHANGE PASSWORD</Typography>
@@ -198,6 +240,7 @@ class Settings extends React.Component {
                                     </Grid>
                                     <Grid container item xs={12}>
                                         <Button variant="contained" onClick={this.handleChangePassword.bind(this)}>{this.state.editPassword ? 'Edit' : 'SAVE'}</Button>
+
                                     </Grid>
 
                                 </Grid>
@@ -207,7 +250,7 @@ class Settings extends React.Component {
                     </Grid>
                 </div>
 
-            </div >
+            </div>
 
 
         )

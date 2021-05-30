@@ -2,9 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import '../Stylesheet.css';
-import { TextField, Button, Grid, } from '@material-ui/core';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import calcage from 's-age'
+import { TextField, Button, Grid, MenuItem } from '@material-ui/core';
 
 import Header from './Header';
 function Profile() {
@@ -87,15 +85,56 @@ function Profile() {
                         <TextField fullWidth placeholder="923143037736" size="small" id="standard-basic" label="Contact Number" type='text' value={getContact} onChange={(data) => { setContact(data.target.value) }} />
                     </Grid>
                     <Grid item xs={4}>
-                        <Autocomplete size="small" options={Gender} getOptionLabel={(option) => option.label} id='combo-box-demo' renderInput={(params) => <TextField {...params} label="Gender" />} />
+                        <TextField
+                            id="standard-select-currency"
+                            fullWidth
+                            size="small"
+                            select
+                            label="Gender"
+                            value={getGender} onChange={(data) => { setGender(data.target.value) }}
+                        >
+                            {Gender.map((option) => (
+                                <MenuItem key={option.value} value={option.value}>
+                                    {option.label}
+                                </MenuItem>
+                            ))}
+                        </TextField>
                     </Grid>
                 </Grid>
                 <Grid container direction="row" justify="space-between" spacing={5}>
                     <Grid size xs={4} style={{ padding: "16px" }}>
-                        <Autocomplete size="small" options={countries} getOptionLabel={(option) => option.label} id='combo-box-demo' renderInput={(params) => <TextField {...params} label="Country" value={getCountry} onChange={(data) => { setCountry(data.target.value) }} />} />
+                        <TextField
+                            id="standard-select-currency"
+                            fullWidth
+                            size="small"
+                            select
+                            label="Country"
+                            value={getCountry} onChange={(data) => {
+                                setCountry(data.target.value)
+                            }}
+                        >
+                            {countries.map((option) => (
+                                <MenuItem key={option.value} value={option.value}>
+                                    {option.label}
+                                </MenuItem>
+                            ))}
+                        </TextField>
                     </Grid>
                     <Grid size xs={3} style={{ padding: "16px" }}>
-                        <Autocomplete size="small" options={Occupation} getOptionLabel={(option) => option.label} id='combo-box-demo' value={getOccupation} onChange={(data) => { setOccupation(data.target.label) }} renderInput={(params) => <TextField {...params} label="Occupation" />} />
+                        <TextField
+                            id="standard-select-currency"
+                            fullWidth
+                            size="small"
+                            select
+                            label="Occupation"
+                            value={getOccupation} onChange={(data) => { setOccupation(data.target.label) }}
+                        >
+                            {Occupation.map((option) => (
+                                <MenuItem key={option.value} value={option.value}>
+                                    {option.label}
+                                </MenuItem>
+                            ))}
+                        </TextField>
                     </Grid>
                     <Grid size xs={3} style={{ padding: "16px" }}>
                         <TextField id="date" fullWidth label="Your Birthday" type="date" defaultValue="2017-05-24" InputLabelProps={{ shrink: true, }} value={getDOB} onChange={(data) => { setDOB(data.target.value) }} />

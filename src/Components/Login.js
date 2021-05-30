@@ -53,7 +53,7 @@ function Login() {
                 <br></br>
                 <TextField fullWidth size="small" id="standard-basic" label="Password" type='password' value={getPassword} onChange={(data) => { setPassword(data.target.value) }} />
                 <br></br>
-                <a className='txt_hyperlink' href='#'>FORGET PASSWORD?</a>
+                <a className='txt_hyperlink' href='/forgtpassword'>FORGET PASSWORD?</a>
                 <br></br>
                 <Button variant="contained" onClick={(e) => handleLogin(e)}>LOGIN</Button>
                 <br></br>
