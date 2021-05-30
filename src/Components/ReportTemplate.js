@@ -34,7 +34,7 @@ class EOS extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div style={{ backgroundColor: "#fff", width: "683px", height: "1024px", margin: "auto"}}>
                 <div style={{
                     display: 'flex',
                     flexDirection: 'row',

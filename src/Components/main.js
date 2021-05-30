@@ -5,7 +5,9 @@ import Signup from './Sign-up';
 import Verification from './Verification';
 import Profile from './UserProfile';
 import Dashboard from './Dashboard';
-import Settings from './Settings'
+import Settings from './Settings';
+import Report from './Reports';
+import EOS from './ReportTemplate';
 
 import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
 
@@ -35,6 +37,12 @@ export default function Main() {
                     </Route>
                     <Route path='/settings'>
                         <Settings />
+                    </Route>
+                    <Route path='/report'>
+                        <Report />
+                    </Route>
+                    <Route path='/RT'>
+                        <EOS />
                     </Route>
                 </Switch>
             </Router>

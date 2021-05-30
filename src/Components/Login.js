@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import '../Stylesheet.css';
 import Header from './Header';
 import { useHistory } from 'react-router-dom';
-import {TextField, Button} from '@material-ui/core';
+import { TextField, Button } from '@material-ui/core';
 
 function Login() {
 
@@ -48,17 +48,17 @@ function Login() {
                 <p className="welcome">WELCOME</p>
                 <span className="title">LOGIN</span>
                 <hr id='hr'></hr>
-                <TextField fullWidth  size="small" id="standard-basic" label="User Name" type='text' value={getid} onChange={(data) => { setid(data.target.value) }} />
+                <TextField fullWidth size="small" id="standard-basic" label="User Name" type='text' value={getid} onChange={(data) => { setid(data.target.value) }} />
                 <br></br>
                 <br></br>
-                <TextField fullWidth size="small" id="standard-basic" label="Password" type='text' value={getPassword} onChange={(data) => { setPassword(data.target.value)}} />                
+                <TextField fullWidth size="small" id="standard-basic" label="Password" type='password' value={getPassword} onChange={(data) => { setPassword(data.target.value) }} />
                 <br></br>
                 <a className='txt_hyperlink' href='#'>FORGET PASSWORD?</a>
                 <br></br>
                 <Button variant="contained" onClick={(e) => handleLogin(e)}>LOGIN</Button>
                 <br></br>
                 <div className='small_font' id='txt'>
-                NEW USER? CREATE <a className='txt_hyperlink' href="/signup">NEW ACCOUNT NOW! <span></span></a>                 
+                    NEW USER? CREATE <a className='txt_hyperlink' href="/signup">NEW ACCOUNT NOW! <span></span></a>
                 </div>
                 <div>
                     <br></br>

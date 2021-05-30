@@ -19,6 +19,8 @@ function Dashboard() {
         if (location.state) {
             setUser(location.state.user)
             setToken(location.state.token)
+            console.log(location.state.user)
+            console.log(location.state.token)
             setName(location.state.user.fname.toUpperCase() + ' ' + location.state.user.lname.toUpperCase())
         }
     }, [location])
@@ -31,7 +33,7 @@ function Dashboard() {
             <div ><br></br></div>
             <div>
                 <p className="welcome">
-                    {pageTitle}<span className="welcome_user"> ABDUL HADI</span>
+                    {pageTitle}<span className="welcome_user"> {name}</span>
                 </p>
             </div>
             <br></br>
@@ -45,7 +47,18 @@ function Dashboard() {
                     <span><img src={doctor} className="btn_logo" /> </span>
                     <p className="small_font">START SESSION</p>
                 </button>
-                <button className="ripple db_btn">
+                <button className="ripple db_btn" onClick={user ?
+                    () =>
+                        history.push({
+                            pathname: '/Report',
+                            state: {
+                                user: user,
+                                token: token,
+                            }
+                        })
+                    :
+                    () => console.log('test')
+                }>
                     <span><img src={rep} className="btn_logo" /> </span>
                     <p className="small_font">REPORTS</p>
                 </button>

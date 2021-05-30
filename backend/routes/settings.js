@@ -45,4 +45,70 @@ router.post('/change_password', authenticate.verifyUser, (req, res) => {
     })
 })
 
+router.patch('/change_email', authenticate.verifyUser, (req, res) => {
+    console.log(req.body)
+    User.findById(req.user._id, (err, user) => {
+        if (err) {
+            res.json({
+                success: false,
+                message: err.name
+            })
+        }
+        else if (user) {
+            user.email = req.body.email;
+            user.save((err, user) => {
+                if (err)
+                    res.json({
+                        success: false,
+                        message: err.name
+                    })
+                else
+                    res.json({
+                        success: true,
+                        user: user,
+                        message: 'Email Updated Successfully'
+                    })
+            })
+        }
+        else
+            res.json({
+                success: false,
+                message: 'User not Found'
+            })
+    })
+})
+
+
+router.patch('/change_contact', authenticate.verifyUser, (req, res) => {
+    console.log(req.body)
+    User.findById(req.user._id, (err, user) => {
+        if (err) {
+            res.json({
+                success: false,
+                message: err.name
+            })
+        }
+        else if (user) {
+            user.contact = req.body.contact;
+            user.save((err, user) => {
+                if (err)
+                    res.json({
+                        success: false,
+                        message: err.name
+                    })
+                else
+                    res.json({
+                        success: true,
+                        user: user,
+                        message: 'Email Updated Successfully'
+                    })
+            })
+        }
+        else
+            res.json({
+                success: false,
+                message: 'User not Found'
+            })
+    })
+})
 module.exports = router;
