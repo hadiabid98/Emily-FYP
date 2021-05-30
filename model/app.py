@@ -1,58 +1,59 @@
 import os
 import glob
 import csv
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
+from numpy.lib.npyio import load
 from werkzeug.utils import secure_filename
 from spectrogram import plotstft
 import numpy as np
-from upload_to_s3 import upload_file_to_s3
-access_key = os.environ['AWS_ACCESS_KEY_ID']
-access_secret_key = os.environ['AWS_SECRET_ACCESS_KEY']
+from keras.models import load_model
 
-UPLOAD_FOLDER = 'static/audio_uploads'
+UPLOAD_FOLDER = r'/uploads'
 ALLOWED_EXTENSIONS = 'wav'
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
+model = load_model(r'C:\Users\Abdul Hadi\Desktop\Emily\Project\emily\model\cnn_emily_0.49367.h5', compile=True) 
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+def preprocess(X):
+    """
+    Convert from float64 to float32 and normalize normalize to decibels
+    relative to full scale (dBFS) for the 4 sec clip.
+    """
+    X1 = X.astype('float32')
 
-@app.route('/donate', methods=['GET', 'POST'])
+    X_train = np.array([(X - X.min()) / (X.max() - X.min()) for X in X1])
+    return X_train
+
+@app.route('/classify', methods=['POST'])
 def upload_file():
     #  if user has submitted the audio file
     if request.method == 'POST':
         file = request.files['file']
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            wav_filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-
             # save wav file  to static/audio_uploads temporarily
-            file.save(wav_filepath)
+            file.save(filename)
 
             # save spectrogram to static/spectrograms
             png_filename = os.path.splitext(filename)[0]+'.png'
-            spec_path = 'static/spectrograms/{}'.format(png_filename)
 
             # plot spectrogram and return matrix
-            spec_matrix = plotstft(wav_filepath, plotpath=spec_path)
+            spec_matrix = plotstft(filename)
+            x = preprocess(spec_matrix)
+            prediction = model.predict(spec_matrix)
+            print(prediction)
+            label = prediction.argmax(axis=-1).tolist()
 
-            # save matrix locally
-            npz_filename = os.path.splitext(filename)[0]+'.npz'
-            np.savez('static/matrices/{}'.format(npz_filename), spec_matrix)
+            os.remove(filename)  # delete wav file
+            return jsonify({
+                'label':label
+            })
 
-            # upload matrix to s3
-            upload_file_to_s3('static/matrices/{}'.format(npz_filename))
-
-            os.remove(wav_filepath)  # delete wav file
-            os.remove('static/matrices/{}'.format(npz_filename))  # delete npz
-
-            return render_template('survey.html', spectrogram=spec_path, completion_status='Your audio has been successfully uploaded. Check out the visual representation below!')
-
-    return render_template('donate.html')
 
 
 @app.route('/thankyou', methods=['POST'])
@@ -72,9 +73,6 @@ def complete_survey():
             with open('dep_log.csv', 'a') as f:
                 writer = csv.writer(f)
                 writer.writerow(fields)
-
-            # write csv to S3
-            upload_file_to_s3('dep_log.csv')
 
             return render_template('thankyou.html')
         else:

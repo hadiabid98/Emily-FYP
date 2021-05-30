@@ -47,12 +47,12 @@ export default function Main() {
                     </Route>
                     <Route path='/RT'>
                         <EOS />
-                      <Route path='/forgtpassword'>
+                    </Route>
+                    <Route path='/forgtpassword'>
                         <Forgtpass />
                     </Route>
                     <Route path='/modeltest'>
                         <Modeltest />
-
                     </Route>
                 </Switch>
             </Router>

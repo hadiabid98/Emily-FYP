@@ -9,7 +9,11 @@ var sentimentSchema = new Schema({
     smile: {
         type: Number
     },
-    facial_exp: {
+    
+    polarity: {
+        type: Number
+    },
+    emotion: {
         type: Number
     },
     user_id: {
