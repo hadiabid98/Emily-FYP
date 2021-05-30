@@ -6,6 +6,7 @@ import { withRouter } from "react-router";
 import axios from 'axios';
 import { TextField, Button, Grid, Typography, MenuItem  } from '@material-ui/core';
 
+
 class Settings extends React.Component {
     static propTypes = {
         location: PropTypes.object.isRequired,
@@ -54,10 +55,11 @@ class Settings extends React.Component {
                 getDOB: location.state.user.dob,
             });
         }
+        console.log(this.state)
     }
 
     handleChangePassword() {
-        if (this.state.getNewPassword === this.state.getConPassword) {
+        if (this.state.getNewPassword === this.state.email) {
             const data = {
                 oldpassword: this.state.getPrePassword,
                 newpassword: this.state.getNewPassword
@@ -72,6 +74,61 @@ class Settings extends React.Component {
                 .then(res => {
                     console.log(res.data)
                 })
+        }
+    }
+
+    handleChangeEmail() {
+        if (this.state.editEmail) {
+            this.setState({ editEmail: !this.state.editEmail })
+        }
+        else {
+            if (this.state.getEmail !== this.state.user.email) {
+                const data = {
+                    updatedEmail: this.state.getEmail
+                }
+                axios.post('http://localhost:5000/settings/change_email', data, {
+                    headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                        'Authorization': `Bearer ${this.state.token}`
+                    }
+                })
+                    .then(res => {
+                        console.log(res.data)
+                    })
+            }
+            else {
+                alert("Updated Email is already same as saved email")
+            }
+        }
+        this.setState({ editEmail: !this.state.editEmail })
+    }
+
+    handleChangeContact() {
+        if (this.state.editContact) {
+            this.setState({ editContact: !this.state.editContact })
+        }
+        else {
+            if (this.state.getContact !== this.state.user.contact) {
+                const data = {
+                    updatedContact: this.state.getConatct
+                }
+                console.log(data)
+                axios.post('http://localhost:5000/settings/change_contact', data, {
+                    headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                        'Authorization': `Bearer ${this.state.token}`
+                    }
+                })
+                    .then(res => {
+                        console.log(res.data)
+                    })
+            }
+            else {
+                alert("Updated contact is same as saved contact")
+            }
+            this.setState({ editContact: !this.state.editContact })
         }
     }
 
@@ -99,6 +156,7 @@ class Settings extends React.Component {
                                 <TextField fullWidth size="small" id="standard-basic" label="Last Name" type='text' value={this.state.getlastName} onChange={(data) => this.setState({ getlastName: data.target.value })} />
                             </Grid>
                             <Grid item xs={3} >
+
                                 <TextField
                                     id="standard-select-currency"
                                     fullWidth
@@ -142,6 +200,7 @@ class Settings extends React.Component {
                                         </MenuItem>
                                     ))}
                                 </TextField>
+
                             </Grid>
                             <Grid size xs={3} style={{ padding: "16px" }}>
                                 <TextField id="date" fullWidth label="Your Birthday" type="date" defaultValue="2017-05-24" InputLabelProps={{ shrink: true, }} value={this.state.getDOB} onChange={(data) => { this.setState({ getDOB: data.target.value }) }} />
@@ -154,14 +213,18 @@ class Settings extends React.Component {
                                     <Typography align='left' variant='h6'>CHANGE EMAIL</Typography>
                                     <hr id='hr' ></hr>
                                     <TextField fullWidth size="small" id="standard-basic" label="Email Address" type='text' value={this.state.getEmail} onChange={(data) => this.setState({ getEmail: data.target.value })} disabled={this.state.editEmail} InputProps={{ readOnly: this.state.editEmail, }} />
-                                    <Button variant="contained" onClick={() => this.setState({ geteditEmail: !this.state.editEmail })}>{this.state.editEmail ? 'EDIT' : 'SAVE'}</Button>
+
+                                    <Button variant="contained" onClick={this.handleChangeEmail.bind(this)}>{this.state.editEmail ? 'Edit' : 'SAVE'}</Button>
+
                                 </Grid>
                                 <Grid item xs={4} align='left'>
                                     <Typography align='left' variant='h6'>CHANGE CONTACT</Typography>
                                     <hr id='hr' ></hr>
                                     <TextField fullWidth placeholder="923143037736" size="small" id="standard-basic" label="Contact Number" type='text' value={this.state.getContact} disabled={this.state.editContact}
                                         onChange={(data) => this.setState({ getContact: data.target.value })} InputProps={{ readOnly: this.state.editContact, }} />
-                                    <Button variant="contained" onClick={() => this.setState({ geteditContact: !this.state.editContact })}>{this.state.editContact ? 'EDIT' : 'SAVE'}</Button>
+
+                                    <Button variant="contained" onClick={this.handleChangeContact.bind(this)}>{this.state.editContact ? 'Edit' : 'SAVE'}</Button>
+
                                 </Grid>
                                 <Grid item xs={4} align='left'>
                                     <Typography align='left' variant='h6'>CHANGE PASSWORD</Typography>
@@ -176,9 +239,8 @@ class Settings extends React.Component {
                                         <TextField fullWidth size="small" id="standard-basic" label="Confirm Password" type='password' value={this.state.getConPassword} disabled={this.state.editPassword} onChange={(data) => this.setState({ getConPassword: data.target.value })} />
                                     </Grid>
                                     <Grid container item xs={12}>
-                                        <Button variant="contained" onClick={() => {
-                                            this.setState({ editPassword: !this.state.editPassword })
-                                        }}>{this.state.editPassword ? 'SAVE' : 'SAVE'}</Button>
+                                        <Button variant="contained" onClick={this.handleChangePassword.bind(this)}>{this.state.editPassword ? 'Edit' : 'SAVE'}</Button>
+
                                     </Grid>
 
                                 </Grid>

@@ -10,7 +10,7 @@ import './Stylesheet.css'
 // import Dashboard from './Components/Dashboard'
 // import EOS from './Components/ReportTemplate'
 // import Login from './components/Login';
-import Main from './components/main'
+import Main from './Components/main'
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors'
