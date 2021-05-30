@@ -4,8 +4,7 @@ import Header from './Header';
 import PropTypes from "prop-types";
 import { withRouter } from "react-router";
 import axios from 'axios';
-import {TextField, Button, Grid, Typography,} from '@material-ui/core';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import { TextField, Button, Grid, Typography, MenuItem  } from '@material-ui/core';
 
 class Settings extends React.Component {
     static propTypes = {
@@ -82,80 +81,116 @@ class Settings extends React.Component {
                 <Header style={{ background: ' linear-gradient(#343f4c, #2b3038)' }} />
                 <div style={{ height: '5%' }}></div>
                 <div className='dialog_box_settings'>
-                <Grid>
-                    <Grid container spacing={6}>
-                        <Grid item xs= {12}>
-                            <Grid item xs ={4}>
-                                <Typography align = 'left' variant = 'h1'>USER PROFILE</Typography>
-                                <hr id='hr' ></hr>
+                    <Grid>
+                        <Grid container spacing={6}>
+                            <Grid item xs={12}>
+                                <Grid item xs={4}>
+                                    <Typography align='left' variant='h1'>USER PROFILE</Typography>
+                                    <hr id='hr' ></hr>
+                                </Grid>
+                            </Grid>
+                            <Grid item xs={3}>
+                                <TextField fullWidth placeholder="hadiabid98" size="small" id="standard-basic" label="User Name" type='text' value={this.state.getid} onChange={(data) => this.setState({ getid: data.target.value })} InputProps={{ readOnly: true, }} />
+                            </Grid>
+                            <Grid item xs={3}>
+                                <TextField fullWidth size="small" id="standard-basic" label="First Name" type='text' value={this.state.getfirstName} onChange={(data) => this.setState({ getfirstName: data.target.value })} />
+                            </Grid>
+                            <Grid item xs={3}>
+                                <TextField fullWidth size="small" id="standard-basic" label="Last Name" type='text' value={this.state.getlastName} onChange={(data) => this.setState({ getlastName: data.target.value })} />
+                            </Grid>
+                            <Grid item xs={3} >
+                                <TextField
+                                    id="standard-select-currency"
+                                    fullWidth
+                                    size="small"
+                                    select
+                                    label="Gender"
+                                    value={this.state.getGender} onChange={(data) => this.setState({ getGender: data.target.value })}>
+                                    {Gender.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
+                            </Grid>
+                            <Grid size xs={3} style={{ padding: "16px" }}>
+                                <TextField
+                                    id="standard-select-currency"
+                                    fullWidth
+                                    size="small"
+                                    select
+                                    label="Country"
+                                    alue={this.state.getCountry} onChange={(data) => this.setState({ getCountry: data.target.value })} >
+                                    {countries.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
+                            </Grid>
+                            <Grid size xs={3} style={{ padding: "16px" }}>
+                                <TextField
+                                    id="standard-select-currency"
+                                    fullWidth
+                                    size="small"
+                                    select
+                                    label="Occupation"
+                                    value={this.state.getOccupation} onChange={(data) => this.setState({ getOccupation: data.target.value })} >
+                                    {Occupation.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
+                            </Grid>
+                            <Grid size xs={3} style={{ padding: "16px" }}>
+                                <TextField id="date" fullWidth label="Your Birthday" type="date" defaultValue="2017-05-24" InputLabelProps={{ shrink: true, }} value={this.state.getDOB} onChange={(data) => { this.setState({ getDOB: data.target.value }) }} />
                             </Grid>
                         </Grid>
-                        <Grid item xs ={3}>
-                        <TextField fullWidth placeholder="hadiabid98" size="small" id="standard-basic" label="User Name" type='text' value={this.state.getid} onChange={(data) => this.setState({ getid: data.target.value })}  InputProps={{readOnly: true,}}/>
-                        </Grid>
-                        <Grid item xs={3}>
-                            <TextField fullWidth  size="small" id="standard-basic" label="First Name" type='text' value={this.state.getfirstName} onChange={(data) => this.setState({ getfirstName: data.target.value })}/>
-                        </Grid>
-                        <Grid item xs={3}>
-                            <TextField fullWidth  size="small" id="standard-basic" label="Last Name" type='text' value={this.state.getlastName} onChange={(data) => this.setState({ getlastName: data.target.value })} />
-                        </Grid>
-                        <Grid item xs= {3} >
-                            <Autocomplete size="small"  options={Gender} getOptionLabel={(option) => option.label} id='combo-box-demo'  value={this.state.getGender} onChange={(data) => this.setState({ getGender: data.target.value })} renderInput={(params) => <TextField {...params} label="Gender" />}/>
-                        </Grid>
-                        <Grid size xs ={3} style={{padding: "16px"}}>
-                        <Autocomplete size="small" options={countries} getOptionLabel={(option) => option.label} id='combo-box-demo'  value={this.state.getCountry} onChange={(data) => this.setState({ getCountry: data.target.value })} renderInput={(params) => <TextField {...params} label="Country" />}/>
-                        </Grid>
-                        <Grid size xs ={3} style={{padding: "16px"}}>
-                        <Autocomplete size="small"  options={Occupation} getOptionLabel={(option) => option.label} id='combo-box-demo'  value={this.state.getOccupation} onChange={(data) => this.setState({ getOccupation: data.target.value })} renderInput={(params) => <TextField {...params} label="Occupation" />}/>
-                        </Grid>
-                        <Grid size xs ={3} style={{padding: "16px"}}>
-                            <TextField id="date" fullWidth label="Your Birthday" type="date" defaultValue="2017-05-24"  InputLabelProps={{shrink: true,}} value={this.state.getDOB} onChange={(data) => { this.setState({ getDOB: data.target.value }) }}/>
-                        </Grid>
-                    </Grid>
-                    <br></br><br></br>
-                    <Grid container spacing={6}>
-                        <Grid container item xs={12} spacing={3} direction="row" justify="space-between" >
-                            <Grid item xs ={4} align = 'left'>
-                            <Typography align = 'left' variant = 'h6'>CHANGE EMAIL</Typography>
-                            <hr id='hr' ></hr>
-                            <TextField fullWidth size="small" id="standard-basic" label="Email Address" type='text' value={this.state.getEmail} onChange={(data) => this.setState({ getEmail: data.target.value })} disabled={this.state.editEmail} InputProps={{readOnly: this.state.editEmail,}}/>
-                            <Button variant="contained" onClick={() => this.setState({ geteditEmail: !this.state.editEmail })}>{this.state.editEmail ? 'EDIT' : 'SAVE'}</Button>
-                            </Grid>
-                            <Grid item xs ={4} align = 'left'>
-                            <Typography align = 'left' variant = 'h6'>CHANGE CONTACT</Typography>
-                                <hr id='hr' ></hr>
-                                <TextField fullWidth placeholder="923143037736" size="small" id="standard-basic" label="Contact Number" type='text' value={this.state.getContact} disabled={this.state.editContact}
-                                    onChange={(data) => this.setState({ getContact: data.target.value })} InputProps={{readOnly: this.state.editContact,}}/>
-                                <Button variant="contained" onClick={() => this.setState({ geteditContact: !this.state.editContact })}>{this.state.editContact ? 'EDIT' : 'SAVE'}</Button>
-                            </Grid>
-                            <Grid item xs ={4} align = 'left'>
-                            <Typography align = 'left' variant = 'h6'>CHANGE PASSWORD</Typography>
-                                <hr id='hr' ></hr>
-                            <Grid container item xs ={12}>
-                            <TextField fullWidth size="small" id="standard-basic" label="Previous Password" type='password' value={this.state.getPrePassword} disabled={this.state.editPassword} onChange={(data) => this.setState({ getPrePassword: data.target.value })} />                
-                            </Grid> 
-                            <Grid container item xs ={12}>
-                            <TextField fullWidth size="small" id="standard-basic" label="New Password" type='password' value={this.state.getNewPassword} disabled={this.state.editPassword} onChange={(data) => this.setState({ getNewPassword: data.target.value })} />                
-                            </Grid> 
-                            <Grid container item xs ={12}>
-                            <TextField fullWidth size="small" id="standard-basic" label="Confirm Password" type='password' value={this.state.getConPassword} disabled={this.state.editPassword} onChange={(data) => this.setState({ getConPassword: data.target.value })} />             
-                            </Grid> 
-                            <Grid container item xs ={12}>
-                            <Button variant="contained" onClick={() => {
-                                this.setState({ editPassword: !this.state.editPassword })
-                            }}>{this.state.editPassword ? 'SAVE' : 'SAVE'}</Button>
+                        <br></br><br></br>
+                        <Grid container spacing={6}>
+                            <Grid container item xs={12} spacing={3} direction="row" justify="space-between" >
+                                <Grid item xs={4} align='left'>
+                                    <Typography align='left' variant='h6'>CHANGE EMAIL</Typography>
+                                    <hr id='hr' ></hr>
+                                    <TextField fullWidth size="small" id="standard-basic" label="Email Address" type='text' value={this.state.getEmail} onChange={(data) => this.setState({ getEmail: data.target.value })} disabled={this.state.editEmail} InputProps={{ readOnly: this.state.editEmail, }} />
+                                    <Button variant="contained" onClick={() => this.setState({ geteditEmail: !this.state.editEmail })}>{this.state.editEmail ? 'EDIT' : 'SAVE'}</Button>
+                                </Grid>
+                                <Grid item xs={4} align='left'>
+                                    <Typography align='left' variant='h6'>CHANGE CONTACT</Typography>
+                                    <hr id='hr' ></hr>
+                                    <TextField fullWidth placeholder="923143037736" size="small" id="standard-basic" label="Contact Number" type='text' value={this.state.getContact} disabled={this.state.editContact}
+                                        onChange={(data) => this.setState({ getContact: data.target.value })} InputProps={{ readOnly: this.state.editContact, }} />
+                                    <Button variant="contained" onClick={() => this.setState({ geteditContact: !this.state.editContact })}>{this.state.editContact ? 'EDIT' : 'SAVE'}</Button>
+                                </Grid>
+                                <Grid item xs={4} align='left'>
+                                    <Typography align='left' variant='h6'>CHANGE PASSWORD</Typography>
+                                    <hr id='hr' ></hr>
+                                    <Grid container item xs={12}>
+                                        <TextField fullWidth size="small" id="standard-basic" label="Previous Password" type='password' value={this.state.getPrePassword} disabled={this.state.editPassword} onChange={(data) => this.setState({ getPrePassword: data.target.value })} />
+                                    </Grid>
+                                    <Grid container item xs={12}>
+                                        <TextField fullWidth size="small" id="standard-basic" label="New Password" type='password' value={this.state.getNewPassword} disabled={this.state.editPassword} onChange={(data) => this.setState({ getNewPassword: data.target.value })} />
+                                    </Grid>
+                                    <Grid container item xs={12}>
+                                        <TextField fullWidth size="small" id="standard-basic" label="Confirm Password" type='password' value={this.state.getConPassword} disabled={this.state.editPassword} onChange={(data) => this.setState({ getConPassword: data.target.value })} />
+                                    </Grid>
+                                    <Grid container item xs={12}>
+                                        <Button variant="contained" onClick={() => {
+                                            this.setState({ editPassword: !this.state.editPassword })
+                                        }}>{this.state.editPassword ? 'SAVE' : 'SAVE'}</Button>
+                                    </Grid>
+
+                                </Grid>
                             </Grid>
 
                         </Grid>
-                        </Grid>
-                        
                     </Grid>
-                    </Grid>
-                    </div>
-
                 </div>
 
-           
+            </div>
+
+
         )
     }
 
@@ -413,38 +448,38 @@ const countries = [
     { code: 'ZA', label: 'South Africa', phone: '27' },
     { code: 'ZM', label: 'Zambia', phone: '260' },
     { code: 'ZW', label: 'Zimbabwe', phone: '263' },
-  ];
+];
 
-  const Gender=[
+const Gender = [
     {
         value: 'M',
         label: 'Male',
-      },
-      {
+    },
+    {
         value: 'F',
         label: 'Female',
-      },
-      {
+    },
+    {
         value: 'NB',
         label: 'Non Binary',
-      },
-  ];
+    },
+];
 
-  const Occupation =[
+const Occupation = [
     {
         value: 'STD',
         label: 'Student',
-      },
-      {
+    },
+    {
         value: 'Emp',
         label: 'Employee',
-      },
-      {
+    },
+    {
         value: 'Biz',
         label: 'Business Owner',
-      },
-      {
+    },
+    {
         value: 'SEmp',
         label: 'Self Employeed',
-      },
-  ];
+    },
+];

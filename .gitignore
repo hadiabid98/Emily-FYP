@@ -5,6 +5,8 @@
 /backend/node_modules
 /.pnp
 .pnp.js
+/model/*.h5
+/model/*.wav
 
 # testing
 /coverage

@@ -6,7 +6,6 @@ import rep from '../assets/document.png'
 import usr from '../assets/man.png'
 import logout from '../assets/logout.png'
 import { useHistory, useLocation } from 'react-router';
-import { Button, Grid, Typography, } from '@material-ui/core';
 
 
 function Dashboard() {
@@ -41,7 +40,18 @@ function Dashboard() {
             </div>
 
             <div className="grid">
-                <button className="ripple db_btn">
+                <button className="ripple db_btn" onClick={user ?
+                    () =>
+                        history.push({
+                            pathname: '/modeltest',
+                            state: {
+                                user: user,
+                                token: token,
+                            }
+                        })
+                    :
+                    () => console.log('test')
+                }>
                     <span><img src={doctor} className="btn_logo" /> </span>
                     <p className="small_font">START SESSION</p>
                 </button>
